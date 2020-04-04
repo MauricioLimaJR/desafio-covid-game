@@ -11,7 +11,20 @@
 export const cornflowerBlue = '#281370'
 export const steelBlue = '#538CB6'
 export const blueChill = '#0D7E8B'
-
+export const smoky = '#585374'
+// main palette
+export const eastbay = '#4E3D74'
+export const butterflyBush = '#5B52A5'
+export const sanMarino = '#5364B4'
+export const danube = '#5680CC'
+export const havelockBlue = '#519CD5'
+export const pictonBlue = '#4DBBE0'
+export const scooter = '#44CFDC'
+// Pink scale
+export const razzmatazzPink = '#ED0C76' // Main
+export const lipstickPink = '#BA095D' // Dark
+export const razzmatazzDarkPink = '#D40B69' // Alt
+export const rosePink = '#FF0D7F' // Light
 
 // /// ZP Palette /// //
 
@@ -30,12 +43,6 @@ export const studioPurple = '#5D40B3' // Dark
 export const royalBlue = '#7752E6' // Alt
 export const heliotropePurple = '#845BFF' // Light
 export const gigasPurple = '#553BA4' // Darker
-
-// Pink scale
-export const razzmatazzPink = '#ED0C76' // Main
-export const lipstickPink = '#BA095D' // Dark
-export const razzmatazzDarkPink = '#D40B69' // Alt
-export const rosePink = '#FF0D7F' // Light
 
 // Green scale
 export const robinEggBlue = '#00E7BA' // Main
