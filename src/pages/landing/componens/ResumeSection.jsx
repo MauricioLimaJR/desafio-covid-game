@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { HashLink as Link } from 'react-router-hash-link'
 // Material-UI
 import { Grid } from '@material-ui/core'
 // Custom Settings
@@ -10,6 +11,7 @@ import * as colors from '../../../constants/colors'
 const MainContainer = styled(Grid)`
   height: 100vh;
   text-align: center;
+  scroll-behavior: smooth;
 `
 
 const Title = styled.h1`
@@ -46,9 +48,11 @@ const ResumeSection = () => {
       </Grid>
 
       <Grid item xs={12} style={{ marginTop: '1rem' }}>
-        <Button color="secondary">
-          COMO JOGAR
-        </Button>
+        <Link to="#rules">
+          <Button color="secondary">
+            COMO JOGAR
+          </Button>
+        </Link>
       </Grid>
     </MainContainer>
   )

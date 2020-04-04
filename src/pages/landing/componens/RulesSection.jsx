@@ -31,6 +31,7 @@ const RulesSection = () => {
 
   return (
     <MainContainer
+      id="rules"
       container
       alignContent='flex-start'
       direction='row'

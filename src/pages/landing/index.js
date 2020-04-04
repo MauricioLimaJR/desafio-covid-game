@@ -13,7 +13,6 @@ const BackgroundContainer = styled(Grid)`
   background-position: center;
   background-size: cover;
   padding: 0px 2px 30px 2px;
-
 `
 
 const Landing = () => {
