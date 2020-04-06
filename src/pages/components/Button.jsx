@@ -5,8 +5,6 @@ import * as colors from '../../constants/colors'
 const CustomDiv = styled.div`
   align-content: center;
   align-self: center;
-  align-content: center;
-  /* background-color: ${colors.razzmatazzPink}; */
   border-radius: 30px;
   box-shadow: 0.5px 0.5px 10px ${colors.black};
   color: white;
@@ -30,18 +28,20 @@ const CustomButton = styled.button`
   border: none;
   outline: none;
 `
+
 /**
  * Custom Button
  *
- * @param {String} color
- * @param {String} size
- * @param {String} variant
+ * @param {String} color - primary (default) or secondary
+ * @param {String} size - TODO: small, medium (default) or largest
+ * @param {String} variant - TODO: text or contained (default)
  */
 const Button = ({
   color,
   size = 'medium',
   variant = 'contained',
-  children
+  children,
+  ...props
 }) => {
   const setColor = color => {
     switch (color) {
@@ -52,26 +52,25 @@ const Button = ({
       case 'primary':
       default: return {
         backgroundColor: colors.smoky,
-        // color: colors.razzmatazzPink,
       }
     }
   }
 
   const setSize = size => {
     switch (size) {
-      case 'large': return colors.smoky
-      case 'small': return colors.smoky
+      case 'large': return {}
+      case 'small': return {}
       case 'medium':
-      default: return colors.smoky
+      default: return {}
     }
   }
 
   const setVariant = variant => {
     switch (variant) {
-      case 'text': return colors.smoky
-      case 'outllined': return colors.smoky
+      case 'text': return {}
+      case 'outllined': return {}
       case 'contained':
-      default: return colors.smoky
+      default: return {}
     }
   }
 
@@ -80,7 +79,7 @@ const Button = ({
   }
 
   return (
-    <CustomButton>
+    <CustomButton {...props}>
       <CustomDiv style={btnStyle}>
         {children}
       </CustomDiv>
