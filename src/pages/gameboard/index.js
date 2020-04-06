@@ -70,7 +70,11 @@ const Gameboard = () => {
 
         {/* Answer alternatives */}
         <Grid item xs={12}>
-          <ShowAnwsers alternatives={game[0].alternatives} type={'line'} />
+          <ShowAnwsers
+            alternatives={game[0].alternatives}
+            explanation={game[0].explanation}
+            type={'line'}
+          />
         </Grid>
       </GameContent>
     </BackgroundContainer>

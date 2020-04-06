@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Grid } from '@material-ui/core'
 // Custom components
 import Button from '../../components/Button'
+import ExplanationModal from './ExplanationModal'
 // Others
 import * as colors from '../../../constants/colors'
 import Toast from '../../../lib/toastfy'
@@ -32,6 +33,7 @@ const AnwserBtn = ({ handleClick, selected, children }) => {
 
 const ShowAnwsers = ({
   alternatives,
+  explanation,
   type = 'line', // quadrate
 }) => {
   const [selected, setSelected] = React.useState(null)
@@ -60,7 +62,13 @@ const ShowAnwsers = ({
       }
 
       <Grid item xs={12} style={{ marginTop: "20px" }}>
-        <Button color="secondary" onClick={() => checkAnwser()}>Responder</Button>
+        <Button color='secondary' onClick={() => checkAnwser()}>
+          Responder
+        </Button>
+        <ExplanationModal
+          explanation={explanation}
+          open={true}
+        />
       </Grid>
     </Grid>
   )
