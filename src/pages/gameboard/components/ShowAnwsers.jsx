@@ -38,9 +38,15 @@ const ShowAnwsers = ({
 }) => {
   const [selected, setSelected] = React.useState(null)
   const [isCorrect, setIsCorrect] = React.useState(false)
+  const [isOpen, setIsOpen] = React.useState(true)
 
   const checkAnwser = () => {
-    return isCorrect ? Toast.success('Correto!!') : Toast.error('incorreto')
+    return isCorrect ? setIsOpen(true) : Toast.error('incorreto')
+  }
+
+  const nextQuestion = () => {
+    setIsOpen(false)
+    setIsCorrect(false)
   }
 
   return (
@@ -66,8 +72,10 @@ const ShowAnwsers = ({
           Responder
         </Button>
         <ExplanationModal
+          actionLabel={'Próxima pergunta'}
           explanation={explanation}
-          open={true}
+          open={isOpen}
+          handleClose={nextQuestion}
         />
       </Grid>
     </Grid>
