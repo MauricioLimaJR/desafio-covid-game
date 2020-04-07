@@ -6,6 +6,7 @@ import { Grid } from '@material-ui/core'
 import ShowAnwsers from './components/ShowAnwsers'
 // Others
 import * as colors from '../../constants/colors'
+import game from '../../static/locale/firstgame'
 import VirusImg from '../../static/images/virus.svg'
 
 const BackgroundContainer = styled(Grid)`
@@ -30,29 +31,6 @@ const Question = styled.div`
   font-size: 1.2rem;
   padding: 2rem 2rem 3rem;
 `
-
-const game = [
-  {
-    question: "Quais dessas opções é a mais eficaz para impedir a disseminação do Coronavírus no Brasil?",
-    alternatives: [
-      { text: 'AAA' },
-      { text: 'BBB', isAnwser: true },
-      { text: 'CCC' },
-      { text: 'DDD' }
-    ],
-    explanation: "This is the correct response 'cause...",
-  },
-  {
-    question: "Questão 2",
-    alternatives: [
-      { text: 'AAA' },
-      { text: 'BBB' },
-      { text: 'CCC' },
-      { text: 'DDD', isAnwser: true },
-    ],
-    explanation: "This is the correct response 'cause...",
-  },
-]
 
 const Gameboard = () => {
   const questions = game
