@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 import { HashLink as Link } from 'react-router-hash-link'
 // Material-UI
 import { Grid } from '@material-ui/core'
@@ -23,6 +24,7 @@ const Description = styled.span`
 `
 
 const ResumeSection = () => {
+  const history = useHistory()
 
   return (
     <MainContainer
@@ -42,7 +44,7 @@ const ResumeSection = () => {
       </Grid>
 
       <Grid item xs={12} style={{ marginTop: '1rem' }}>
-        <Button>
+        <Button onClick={() => history.push('/jogar')}>
           JOGAR AGORA
         </Button>
       </Grid>

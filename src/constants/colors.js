@@ -13,6 +13,7 @@ export const steelBlue = '#538CB6'
 export const wedgewood = '#4A83A6'
 export const blueChill = '#0D7E8B'
 export const cornflowerBlue = '#281370'
+export const cornflowerBlueLigth = '#DDD6F6'
 
 // Quizizz palete
 export const lividBrown = '#462042'

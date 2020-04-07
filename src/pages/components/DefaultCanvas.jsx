@@ -4,7 +4,7 @@ import * as colors from '../../constants/colors'
 
 const Background = styled.div`
   background: linear-gradient(
-    ${colors.cornflowerBlue},
+    ${colors.cornflowerBlueLigth},
     ${colors.steelBlue},
     ${colors.blueChill}
   );
