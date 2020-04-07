@@ -23,15 +23,17 @@ const GameContent = styled(Grid)`
 
 const Question = styled.div`
   background-color: ${colors.white};
-  border-radius: 0 0 20% 20%;
-  color: ${colors.wedgewood};
+  border-bottom: solid 3px ${colors.smoky};
+  border-radius: 0 0 100% 100%;
+  color: ${colors.smoky};
   font-weight: bold;
-  padding: 4rem;
+  font-size: 1.2rem;
+  padding: 2rem 2rem 3rem;
 `
 
 const game = [
   {
-    question: "Questão 1",
+    question: "Quais dessas opções é a mais eficaz para impedir a disseminação do Coronavírus no Brasil?",
     alternatives: [
       { text: 'AAA' },
       { text: 'BBB', isAnwser: true },

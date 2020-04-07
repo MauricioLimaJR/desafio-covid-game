@@ -11,10 +11,11 @@ import Toast from '../../../lib/toastfy'
 
 const AnwserBtn = ({ handleClick, selected, children }) => {
   const LineButton = styled.div`
-    background-color: ${selected ? colors.lividBrown : colors.eastbay};
+    background-color: ${selected ? colors.lividBrown : colors.smoky};
     border-radius: 30px;
-    border-bottom: solid 3px ${colors.smoky};
+    border-bottom: solid 8px ${colors.eastbay};
     color: white;
+    font-weight: bold;
     margin: 0 auto;
     padding: 13px 25px;
     width: 200px;
@@ -36,17 +37,13 @@ const ShowAnwsers = ({
   explanation,
   type = 'line', // quadrate
 }) => {
-  const [selected, setSelected] = React.useState(null)
-  const [isCorrect, setIsCorrect] = React.useState(false)
-  const [isOpen, setIsOpen] = React.useState(true)
+  const [isOpen, setIsOpen] = React.useState(false)
 
-  const checkAnwser = () => {
-    return isCorrect ? setIsOpen(true) : Toast.error('incorreto')
-  }
+  const checkAnwser = (isAnwser) => isAnwser
+    ? setIsOpen(true) : Toast.error('Pense melhor...')
 
   const nextQuestion = () => {
     setIsOpen(false)
-    setIsCorrect(false)
   }
 
   return (
@@ -56,7 +53,7 @@ const ShowAnwsers = ({
           return type === 'line'
           ? (
             <Grid item xs={12}>
-              <AnwserBtn selected={selected === k} handleClick={() => setSelected(k) || setIsCorrect(alt.isAnwser)}>
+              <AnwserBtn handleClick={() => checkAnwser(alt.isAnwser)}>
                 {alt.text}
               </AnwserBtn>
             </Grid>
@@ -67,17 +64,13 @@ const ShowAnwsers = ({
         })
       }
 
-      <Grid item xs={12} style={{ marginTop: "20px" }}>
-        <Button color='secondary' onClick={() => checkAnwser()}>
-          Responder
-        </Button>
-        <ExplanationModal
-          actionLabel={'Próxima pergunta'}
-          explanation={explanation}
-          open={isOpen}
-          handleClose={nextQuestion}
-        />
-      </Grid>
+      {/* Anwser modal */}
+      <ExplanationModal
+        actionLabel={'Próxima pergunta'}
+        explanation={explanation}
+        open={isOpen}
+        handleClose={nextQuestion}
+      />
     </Grid>
   )
 }
