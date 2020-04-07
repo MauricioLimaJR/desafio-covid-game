@@ -36,14 +36,16 @@ const ShowAnwsers = ({
   alternatives,
   explanation,
   type = 'line', // quadrate
+  handleCorrectResponse,
 }) => {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const checkAnwser = (isAnwser) => isAnwser
     ? setIsOpen(true) : Toast.error('Pense melhor...')
 
-  const nextQuestion = () => {
+  const correctResponse = () => {
     setIsOpen(false)
+    handleCorrectResponse()
   }
 
   return (
@@ -69,7 +71,7 @@ const ShowAnwsers = ({
         actionLabel={'Próxima pergunta'}
         explanation={explanation}
         open={isOpen}
-        handleClose={nextQuestion}
+        handleClose={correctResponse}
       />
     </Grid>
   )

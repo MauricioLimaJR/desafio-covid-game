@@ -55,6 +55,16 @@ const game = [
 ]
 
 const Gameboard = () => {
+  const questions = game
+  const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0)
+
+  const nextQuestion = () => {
+    if ((currentQuestionIndex + 1) < questions.length) {
+      return setCurrentQuestionIndex(v => v + 1)
+    }
+    alert('fim do jogo')
+  }
+
   return (
     <BackgroundContainer
       container
@@ -66,16 +76,17 @@ const Gameboard = () => {
         {/* Question */}
         <Grid item xs={12}>
           <Question>
-            {game[0].question}
+            {questions[currentQuestionIndex].question}
           </Question>
         </Grid>
 
         {/* Answer alternatives */}
         <Grid item xs={12}>
           <ShowAnwsers
-            alternatives={game[0].alternatives}
-            explanation={game[0].explanation}
+            alternatives={questions[currentQuestionIndex].alternatives}
+            explanation={questions[currentQuestionIndex].explanation}
             type={'line'}
+            handleCorrectResponse={nextQuestion}
           />
         </Grid>
       </GameContent>
