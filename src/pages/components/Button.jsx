@@ -58,8 +58,8 @@ const Button = ({
 
   const setSize = size => {
     switch (size) {
-      case 'large': return {}
-      case 'small': return {}
+      case 'large': return { width: '180px' }
+      case 'small': return { width: '100px' }
       case 'medium':
       default: return {}
     }
@@ -75,7 +75,8 @@ const Button = ({
   }
 
   const btnStyle = {
-    ...setColor(color)
+    ...setColor(color),
+    ...setSize(size),
   }
 
   return (

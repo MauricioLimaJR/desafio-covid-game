@@ -11,7 +11,7 @@ import Book from '../../../static/images/book.svg'
 import Award from '../../../static/images/award.svg'
 
 const MainContainer = styled(Grid)`
-  min-height: 100vh;
+  height: 100%;
   text-align: center;
 `
 
@@ -34,7 +34,6 @@ const RulesSection = () => {
       id="rules"
       container
       alignContent='flex-start'
-      direction='row'
     >
       <Grid item xs={12}>
         <Title>O jogo é simples!</Title>

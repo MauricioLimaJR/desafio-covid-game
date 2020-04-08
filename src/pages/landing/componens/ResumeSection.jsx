@@ -10,9 +10,7 @@ import Button from '../../components/Button'
 import * as colors from '../../../constants/colors'
 
 const MainContainer = styled(Grid)`
-  height: 100vh;
-  text-align: center;
-  scroll-behavior: smooth;
+  height: 100%;
 `
 
 const Title = styled.h1`
@@ -27,11 +25,7 @@ const ResumeSection = () => {
   const history = useHistory()
 
   return (
-    <MainContainer
-      container
-      alignContent='center'
-      direction='row'
-    >
+    <MainContainer container alignContent='center'>
       <Grid item xs={12}>
         <Title>JOGÃO LEGALZÃO</Title>
       </Grid>

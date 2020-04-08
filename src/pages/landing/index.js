@@ -12,12 +12,13 @@ const BackgroundContainer = styled(Grid)`
   background-image: url(${skyBackground});
   background-position: center;
   background-size: cover;
-  padding: 0px 2px 30px 2px;
+  height: 89vh;
+  overflow-y: scroll;
 `
 
 const Landing = () => {
   return (
-    <BackgroundContainer container direction="row">
+    <BackgroundContainer container>
       <ResumeSection />
       <RulesSection />
     </BackgroundContainer>

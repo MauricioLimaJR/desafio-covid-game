@@ -13,12 +13,13 @@ const AnwserBtn = ({ handleClick, selected, children }) => {
   const LineButton = styled.div`
     background-color: ${selected ? colors.lividBrown : colors.smoky};
     border-radius: 30px;
-    border-bottom: solid 8px ${colors.eastbay};
+    border-bottom: solid 4px ${colors.eastbay};
     color: white;
-    font-weight: bold;
     margin: 0 auto;
     padding: 13px 25px;
     width: 200px;
+
+    font-size-adjust: 10;
 
     :hover {
       box-shadow: 1px 1px 3px ${colors.abbeyGray};
@@ -49,7 +50,12 @@ const ShowAnwsers = ({
   }
 
   return (
-    <Grid container alignContent="center" justify="center" spacing={2}>
+    <Grid
+      container
+      alignContent="center"
+      justify="center"
+      spacing={2}
+    >
       {
         alternatives.map((alt, k) => {
           return type === 'line'

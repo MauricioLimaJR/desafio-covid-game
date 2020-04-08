@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 // Material-UI
-import { Grid } from '@material-ui/core'
+import { Grid, Divider } from '@material-ui/core'
 // Custom components
 import ShowAnwsers from './components/ShowAnwsers'
 // Others
@@ -10,7 +10,7 @@ import game from '../../static/locale/firstgame'
 import VirusImg from '../../static/images/virus.svg'
 
 const BackgroundContainer = styled(Grid)`
-  height: 100vh;
+  height: 100%;
 `
 
 const GameContent = styled(Grid)`
@@ -18,7 +18,7 @@ const GameContent = styled(Grid)`
   background-repeat: no-repeat;
   background-position: 100% 0%;
   background-size: 140vh;
-  height: 100vh;
+  height: 100%;
   max-width: 700px !important;
 `
 
@@ -28,7 +28,7 @@ const Question = styled.div`
   border-radius: 0 0 100% 100%;
   color: ${colors.smoky};
   font-weight: bold;
-  font-size: 1.2rem;
+  /* font-size: 1.2rem; */
   padding: 2rem 2rem 3rem;
 `
 
@@ -53,6 +53,7 @@ const Gameboard = () => {
       <GameContent container direction="row">
         {/* Question */}
         <Grid item xs={12}>
+          <Divider variant='middle'/>
           <Question>
             {questions[currentQuestionIndex].question}
           </Question>

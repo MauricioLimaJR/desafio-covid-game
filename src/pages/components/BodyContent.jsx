@@ -1,29 +1,25 @@
 import React from 'react'
 import styled from 'styled-components'
-// Material-UI
-import { withStyles } from '@material-ui/core/styles'
-// Custom
-// import * as colors from '../../constants/colors'
+import { Grid } from '@material-ui/core'
+// Others
+import * as colors from '../../constants/colors'
 
-const Styled = {}
-const styles = () => {
-  Styled.Body = styled.div`
-    align-items: flex-start;
-    display: flex;
-    /* height: 80vh; */
-    height: 100%;
-    justify-content: center;
-    padding: 2vh;
-    /* padding-top: 0; */
-    /* overflow-y: scroll; */
-    text-align: center;
-  `
-}
+const Background = styled(Grid)`
+  background: linear-gradient(
+    ${colors.cornflowerBlueLigth},
+    ${colors.steelBlue},
+    ${colors.blueChill}
+  );
+  height: 89vh;
+  width: 100vh;
+  text-align: center;
+  overflow: hidden;
+`
 
 const BodyContent = ({ children }) => (
-  <Styled.Body>
+  <Background container justify="center" alignContent='center' direction="row">
     {children}
-  </Styled.Body>
+  </Background>
 )
 
-export default withStyles(styles)(BodyContent)
+export default BodyContent
