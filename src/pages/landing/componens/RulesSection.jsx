@@ -33,57 +33,60 @@ const RulesSection = () => {
       id="rules"
       container
       alignContent='flex-start'
+      justify='center'
     >
-      <Grid item xs={12}>
-        <Title>O jogo é simples!</Title>
-      </Grid>
+      <Grid item style={{ maxWidth: '600px' }}>
+        <Grid item xs={12}>
+          <Title>O jogo é simples!</Title>
+        </Grid>
 
-      <Grid item xs={12} style={{ textAlign: 'left' }}>
-        <Rule container direction="row" alignContent="flex-start">
-          {}
-          <Grid item xs>
-            <Description>
-              Responda <b>corretamente</b> as questões, que envolvem tópicos importantes sobre o <b>coranavírus</b> e como combatê-lo.
-            </Description>
-          </Grid>
-          <Grid item xs={3}>
-            <img height={100} src={Game}></img>
-          </Grid>
-        </Rule>
-      </Grid>
+        <Grid item xs={12} style={{ textAlign: 'left' }}>
+          <Rule container direction="row" alignContent="flex-start">
+            {}
+            <Grid item xs>
+              <Description>
+                Responda <b>corretamente</b> as questões, que envolvem tópicos importantes sobre o <b>coranavírus</b> e como combatê-lo.
+              </Description>
+            </Grid>
+            <Grid item xs={3}>
+              <img height={100} src={Game}></img>
+            </Grid>
+          </Rule>
+        </Grid>
 
-      <Grid item xs={12} style={{ textAlign: 'right' }}>
-        <Rule container direction="row" alignContent="flex-end"
-        >
-          <Grid item xs={2}>
-            <img height={100} src={Book}></img>
-          </Grid>
-          <Grid item xs>
-            <Description>
-              O objetivo é <b>acertar o maior número de respostas</b> no menor tempo possível. Além de elimar suas dúvidas sobre a pandemia.
-            </Description>
-          </Grid>
-        </Rule>
-      </Grid>
+        <Grid item xs={12} style={{ textAlign: 'right' }}>
+          <Rule container direction="row" alignContent="flex-end"
+          >
+            <Grid item xs={2}>
+              <img height={100} src={Book}></img>
+            </Grid>
+            <Grid item xs>
+              <Description>
+                O objetivo é <b>acertar o maior número de respostas</b> no menor tempo possível. Além de elimar suas dúvidas sobre a pandemia.
+              </Description>
+            </Grid>
+          </Rule>
+        </Grid>
 
-      <Grid item xs={12} style={{ textAlign: 'left' }}>
-        <Rule container direction="row" alignContent="flex-start"
-        >
-          <Grid item xs>
-            <Description>
-              As melhores pontuações, ganharão um <b>destaque</b> no nosso Painel dos Campeões e serão lembradas como as <b>melhores combatentes de fakenews do COVID-19 do Brasil.</b>
-            </Description>
-          </Grid>
-          <Grid item xs={2}>
-            <img height={100} src={Award}></img>
-          </Grid>
-        </Rule>
-      </Grid>
+        <Grid item xs={12} style={{ textAlign: 'left' }}>
+          <Rule container direction="row" alignContent="flex-start"
+          >
+            <Grid item xs>
+              <Description>
+                As melhores pontuações, ganharão um <b>destaque</b> no nosso Painel dos Campeões e serão lembradas como as <b>melhores combatentes de fakenews do COVID-19 do Brasil.</b>
+              </Description>
+            </Grid>
+            <Grid item xs={2}>
+              <img height={100} src={Award}></img>
+            </Grid>
+          </Rule>
+        </Grid>
 
-      <Grid item xs={12} style={{ marginTop: '1rem' }}>
-        <Button color='secondary'>
-          JOGAR AGORA
-        </Button>
+        <Grid item xs={12} style={{ marginTop: '1rem' }}>
+          <Button color='secondary'>
+            JOGAR AGORA
+          </Button>
+        </Grid>
       </Grid>
     </MainContainer>
   )
