@@ -12,7 +12,7 @@ const BackgroundContainer = styled(Grid)`
   background-image: url(${skyBackground});
   background-position: center;
   background-size: cover;
-  height: 89vh;
+  height: 95vh;
   overflow-y: scroll;
 `
 
