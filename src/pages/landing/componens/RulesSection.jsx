@@ -28,7 +28,6 @@ const Description = styled.span`
 `
 
 const RulesSection = () => {
-
   return (
     <MainContainer
       id="rules"
@@ -40,15 +39,15 @@ const RulesSection = () => {
       </Grid>
 
       <Grid item xs={12} style={{ textAlign: 'left' }}>
-        <Rule container direction="row" alignContent="flex-start"
-        >
-          <Grid item xs={7}>
+        <Rule container direction="row" alignContent="flex-start">
+          {}
+          <Grid item xs>
             <Description>
-              Responda <b>corretamente e no menor tempo possível.</b> Todas as questões envolvem tópicos importantes sobre o novo coranavírus e como combatê-lo.
+              Responda <b>corretamente</b> as questões, que envolvem tópicos importantes sobre o <b>coranavírus</b> e como combatê-lo.
             </Description>
           </Grid>
           <Grid item xs={3}>
-            <img src={Game}></img>
+            <img height={100} src={Game}></img>
           </Grid>
         </Rule>
       </Grid>
@@ -56,12 +55,12 @@ const RulesSection = () => {
       <Grid item xs={12} style={{ textAlign: 'right' }}>
         <Rule container direction="row" alignContent="flex-end"
         >
-          <Grid item xs={5}>
-            <img src={Book}></img>
+          <Grid item xs={2}>
+            <img height={100} src={Book}></img>
           </Grid>
-          <Grid item xs={7}>
+          <Grid item xs>
             <Description>
-              O objetivo é <b>acertar o maior número de respostas</b> no menor tempo possível e se livrar de vez de qualquer dúvida ou fakenews em relação à pandemia.
+              O objetivo é <b>acertar o maior número de respostas</b> no menor tempo possível. Além de elimar suas dúvidas sobre a pandemia.
             </Description>
           </Grid>
         </Rule>
@@ -70,13 +69,13 @@ const RulesSection = () => {
       <Grid item xs={12} style={{ textAlign: 'left' }}>
         <Rule container direction="row" alignContent="flex-start"
         >
-          <Grid item xs={7}>
+          <Grid item xs>
             <Description>
-              As pessoas com as melhores pontuações, ganharão um <b>lugar de destaque</b> no nosso Painel dos Campeões e serão sempre lembrados como os <b>melhores combatentes de fakenews do Brasil.</b>
+              As melhores pontuações, ganharão um <b>destaque</b> no nosso Painel dos Campeões e serão lembradas como as <b>melhores combatentes de fakenews do COVID-19 do Brasil.</b>
             </Description>
           </Grid>
-          <Grid item xs={3}>
-            <img src={Award}></img>
+          <Grid item xs={2}>
+            <img height={100} src={Award}></img>
           </Grid>
         </Rule>
       </Grid>
