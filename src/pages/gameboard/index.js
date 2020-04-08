@@ -28,8 +28,21 @@ const Question = styled.div`
   border-radius: 0 0 100% 100%;
   color: ${colors.smoky};
   font-weight: bold;
-  /* font-size: 1.2rem; */
-  padding: 2rem 2rem 3rem;
+  padding: 5px 1rem 2rem;
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  .progress {
+    color: ${colors.razzmatazzPink};
+    font-weight: normal;
+    margin-bottom: 5px;
+  }
+  .current {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
 `
 
 const Gameboard = () => {
@@ -54,8 +67,12 @@ const Gameboard = () => {
         {/* Question */}
         <Grid item xs={12}>
           <Divider variant='middle'/>
+
           <Question>
-            {questions[currentQuestionIndex].question}
+            <p className='progress'>
+              <span className='current'>{currentQuestionIndex + 1}</span>{`ª de ${questions.length}`}
+            </p>
+            <p>{questions[currentQuestionIndex].question}</p>
           </Question>
         </Grid>
 
