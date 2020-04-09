@@ -25,7 +25,7 @@ export default[
     question: 'Fake ou News: Qualquer máscara me protege de contrair o novo Coronavírus.',
     alternatives: [
       { text: 'Fake', isAnwser: true },
-      { text: 'Verdade'},
+      { text: 'News'},
     ],
     explanation: 'Máscaras ajudam você a não espalhar o vírus, mas não impedem que você o contraia. Além disso, não existe material suficiente para profissionais de saúde e usar essas máscaras sem indicação pode acabar prejudicando o atendimento de pessoas doentes.',
   },
@@ -45,7 +45,7 @@ export default[
     question: 'Fake ou News: O novo Coronavírus não consegue sobreviver a temperaturas entre 26º e 27º.',
     alternatives: [
       { text: 'Fake', isAnwser: true },
-      { text: 'Verdade'},
+      { text: 'News'},
     ],
     explanation: 'O Novo Coronavírus consegue facilmente suportar temperaturas superiores à 27º. A diretora do IMT-USP Ester Sabino, afirma: "A temperatura do corpo humano é 36ºC. Portanto, esta afirmativa é falsa".',
   },
@@ -76,7 +76,7 @@ export default[
     question: 'Fake ou News: A maioria das pessoas fora do grupo de risco não sentem sintomas fortes. Por isso, podem e devem transitar livremente, enquanto os mais vulneráveis ficam em quarentena.',
     alternatives: [
       { text: 'Fake', isAnwser: true },
-      { text: 'Verdade'},
+      { text: 'News'},
     ],
     explanation: 'Todos devem ficar em casa para garantir que o Coronavírus cause o menor número de vítimas possível. Uma criança, por exemplo, mesmo sem apresentar nenhum sintoma, pode carregar o vírus no seu organismo e infectar dezenas de pessoas, ajudando a sobrecarregar o sistema de saúde, impedindo que outros tenham acesso ao tratamento adequado.',
   }
