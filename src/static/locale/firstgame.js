@@ -54,9 +54,9 @@ export default[
     question: 'Qual o nome científico do Coronavírus',
     alternatives: [
       { text: 'Vírus Chines'},
-      { text: 'Covid-19', isAnwser: true },
+      { text: 'Covid-19'},
       { text: 'H1N1'},
-      { text: 'H2N7'},
+      { text: 'Sars-Cov-2', isAnwser: true },
     ],
     explanation: 'O nome científico é Covid-19, do inglês Coronavirus Disease 2019. Chamar essa doença de “vírus chinês”, além de cientificamente incorreto, é bastante ofensivo. Então, na hora de escolher como chamá-lo, fique do lado da ciência.',
   },
@@ -75,8 +75,8 @@ export default[
   {
     question: 'Fake ou News: A maioria das pessoas fora do grupo de risco não sentem sintomas fortes. Por isso, podem e devem transitar livremente, enquanto os mais vulneráveis ficam em quarentena.',
     alternatives: [
-      { text: 'Fake'},
-      { text: 'Verdade', isAnwser: true },
+      { text: 'Fake', isAnwser: true },
+      { text: 'Verdade'},
     ],
     explanation: 'Todos devem ficar em casa para garantir que o Coronavírus cause o menor número de vítimas possível. Uma criança, por exemplo, mesmo sem apresentar nenhum sintoma, pode carregar o vírus no seu organismo e infectar dezenas de pessoas, ajudando a sobrecarregar o sistema de saúde, impedindo que outros tenham acesso ao tratamento adequado.',
   }

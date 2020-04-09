@@ -27,7 +27,7 @@ const ResumeSection = () => {
   return (
     <MainContainer container alignContent='center'>
       <Grid item xs={12}>
-        <Title>JOGÃO LEGALZÃO</Title>
+        <Title>DESAVIO COVID-19</Title>
       </Grid>
 
       <Grid item xs={12}>
