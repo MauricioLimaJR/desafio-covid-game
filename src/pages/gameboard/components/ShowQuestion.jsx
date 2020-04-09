@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 // Material-UI
-import { Grid } from '@material-ui/core'
+import { Grid, Divider } from '@material-ui/core'
 // Custom components
 import Button from '../../components/Button'
 import ExplanationModal from './ExplanationModal'
@@ -33,13 +33,39 @@ const AnwserBtn = ({ handleClick, selected, children }) => {
   )
 }
 
-const ShowAnwsers = ({
-  alternatives,
-  explanation,
-  type = 'line', // quadrate
-  handleCorrectResponse,
+const Question = styled.div`
+  background-color: ${colors.white};
+  border-bottom: solid 3px ${colors.smoky};
+  border-radius: 0 0 100% 100%;
+  color: ${colors.smoky};
+  font-weight: bold;
+  padding: 5px 1rem 2rem;
+
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  .progress {
+    color: ${colors.razzmatazzPink};
+    font-weight: normal;
+    margin-bottom: 5px;
+  }
+  .current {
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+`
+
+const ShowQuestion = ({
+  question,
+  questionIndex,
+  gameLength,
+  handleCorrectResponse = () => {},
 }) => {
   const [isOpen, setIsOpen] = React.useState(false)
+
+  const { question: asking, alternatives, explanation } = question
+  const type = 'line'
 
   const checkAnwser = (isAnwser) => isAnwser
     ? setIsOpen(true) : Toast.error('Pense melhor...')
@@ -56,6 +82,18 @@ const ShowAnwsers = ({
       justify="center"
       spacing={2}
     >
+      {/* Question */}
+      <Grid item xs={12}>
+        <Divider variant='middle'/>
+        <Question>
+          <p className='progress'>
+            <span className='current'>{questionIndex + 1}</span>{`ª de ${gameLength}`}
+          </p>
+          <p>{asking}</p>
+        </Question>
+      </Grid>
+
+      {/* Alternatives */}
       {
         alternatives.map((alt, k) => {
           return type === 'line'
@@ -76,12 +114,11 @@ const ShowAnwsers = ({
       <ExplanationModal
         actionLabel={'Próxima pergunta'}
         explanation={explanation}
-        // open={isOpen}
-        open={true}
+        open={isOpen}
         handleClose={correctResponse}
       />
     </Grid>
   )
 }
 
-export default ShowAnwsers
+export default ShowQuestion

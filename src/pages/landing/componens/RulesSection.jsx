@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { HashLink as Link } from 'react-router-hash-link'
 // Material-UI
 import { Grid } from '@material-ui/core'
 // Custom Settings
@@ -83,9 +84,11 @@ const RulesSection = () => {
         </Grid>
 
         <Grid item xs={12} style={{ marginTop: '1rem' }}>
-          <Button color='secondary'>
-            JOGAR AGORA
-          </Button>
+          <Link to="/jogar">
+            <Button color="secondary">
+              JOGAR AGORA
+            </Button>
+          </Link>
         </Grid>
       </Grid>
     </MainContainer>

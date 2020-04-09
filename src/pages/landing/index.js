@@ -13,6 +13,7 @@ const BackgroundContainer = styled(Grid)`
   background-position: center;
   background-size: cover;
   height: 95vh;
+  scroll-behavior: smooth;
   overflow-y: scroll;
 `
 

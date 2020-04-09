@@ -38,9 +38,11 @@ const ResumeSection = () => {
       </Grid>
 
       <Grid item xs={12} style={{ marginTop: '1rem' }}>
-        <Button onClick={() => history.push('/jogar')}>
-          JOGAR AGORA
-        </Button>
+        <Link to="/jogar">
+          <Button color="primary">
+            JOGAR AGORA
+          </Button>
+        </Link>
       </Grid>
 
       <Grid item xs={12} style={{ marginTop: '1rem' }}>
