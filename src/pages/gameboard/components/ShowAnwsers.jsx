@@ -76,7 +76,8 @@ const ShowAnwsers = ({
       <ExplanationModal
         actionLabel={'Próxima pergunta'}
         explanation={explanation}
-        open={isOpen}
+        // open={isOpen}
+        open={true}
         handleClose={correctResponse}
       />
     </Grid>

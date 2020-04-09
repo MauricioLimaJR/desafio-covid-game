@@ -1,31 +1,37 @@
 import React from 'react'
+import styled from 'styled-components'
 // Material-UI
 import { Grid } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
-import { makeStyles } from '@material-ui/core/styles'
 // Custom components
 import Button from '../../components/Button'
 // Others
 import * as colors from '../../../constants/colors'
+import Award from '../../../static/images/award.svg'
 
 import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
-import MuiDialogActions from '@material-ui/core/DialogActions'
 
-const actionsDialogStyles = makeStyles({
-  root: {
-    justifyContent: 'center',
-    marginBottom: '10px',
-  },
-})
+const CustomDialogActions = styled(DialogActions)`
+  justify-content: center !important;
+  margin-bottom: 10px;
+`
 
-const dialogStyles = makeStyles({
+const CustomDialog = withStyles(theme => ({
   root: {
-    borderRadius: 13,
+    textAlign: 'center',
   },
-})
+  paper: {
+    border: `solid 2px ${colors.smoky}`,
+    backgroundImage: `url(${Award})`,
+    backgroundPosition: '100% 100%',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: '15%',
+    [theme.breakpoints.down('md')]: { backgroundSize: '40%' }
+  },
+}))(Dialog)
 
 const ExplanationModal = ({
   explanation,
@@ -33,17 +39,12 @@ const ExplanationModal = ({
   open,
   handleClose
 }) => {
-  const classes = dialogStyles()
-  const diaS = actionsDialogStyles()
 
   return (
-    <Dialog
+    <CustomDialog
       open={open}
       onClose={handleClose}
       aria-labelledby="customized-dialog-title"
-      classes={{
-        root: classes.root
-      }}
     >
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
@@ -56,12 +57,12 @@ const ExplanationModal = ({
         </DialogContentText>
       </DialogContent>
 
-      <DialogActions classes={{ root: diaS.root }}>
+      <CustomDialogActions>
         <Button color='primary' onClick={handleClose}>
           {actionLabel}
         </Button>
-      </DialogActions>
-    </Dialog>
+      </CustomDialogActions>
+    </CustomDialog>
   )
 }
 export default ExplanationModal
