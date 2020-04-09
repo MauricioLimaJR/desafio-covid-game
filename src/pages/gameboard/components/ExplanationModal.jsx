@@ -1,18 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 // Material-UI
-import { Grid } from '@material-ui/core'
 import { withStyles } from '@material-ui/core/styles'
+import {
+  Grid,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogContentText
+} from '@material-ui/core'
 // Custom components
 import Button from '../../components/Button'
 // Others
 import * as colors from '../../../constants/colors'
 import Award from '../../../static/images/award.svg'
-
-import Dialog from '@material-ui/core/Dialog'
-import DialogActions from '@material-ui/core/DialogActions'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
 
 const CustomDialogActions = styled(DialogActions)`
   justify-content: center !important;

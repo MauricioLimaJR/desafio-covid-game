@@ -4,8 +4,8 @@ import styled from 'styled-components'
 import { Grid } from '@material-ui/core'
 // Custom components
 import ShowQuestion from './components/ShowQuestion'
+import GameResume from './components/GameResume'
 // Others
-import * as colors from '../../constants/colors'
 import game from '../../static/locale/firstgame'
 import VirusImg from '../../static/images/virus.svg'
 
@@ -25,12 +25,13 @@ const GameContent = styled(Grid)`
 const Gameboard = () => {
   const questions = game
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0)
+  const [resumeGame, setResumeGame] = React.useState(false)
 
   const nextQuestion = () => {
     if ((currentQuestionIndex + 1) < questions.length) {
       return setCurrentQuestionIndex(v => v + 1)
     }
-    alert('fim do jogo')
+    setResumeGame(true)
   }
 
   return (
@@ -41,14 +42,17 @@ const Gameboard = () => {
       alignContent="flex-start"
     >
       <GameContent container direction="row" data-playing={false}>
-        {/* Answer alternatives */}
         <Grid item xs={12}>
-          <ShowQuestion
-            question={questions[currentQuestionIndex]}
-            questionIndex={currentQuestionIndex}
-            gameLength={questions.length}
-            handleCorrectResponse={nextQuestion}
-          />
+          {
+            resumeGame
+              ? <GameResume />
+              : <ShowQuestion
+                question={questions[currentQuestionIndex]}
+                questionIndex={currentQuestionIndex}
+                gameLength={questions.length}
+                handleCorrectResponse={nextQuestion}
+              />
+          }
         </Grid>
       </GameContent>
     </BackgroundContainer>

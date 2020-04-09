@@ -3,7 +3,6 @@ import styled from 'styled-components'
 // Material-UI
 import { Grid, Divider } from '@material-ui/core'
 // Custom components
-import Button from '../../components/Button'
 import ExplanationModal from './ExplanationModal'
 // Others
 import * as colors from '../../../constants/colors'
