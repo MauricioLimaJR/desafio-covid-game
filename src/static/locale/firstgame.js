@@ -58,7 +58,7 @@ export default[
       { text: 'H1N1'},
       { text: 'Sars-Cov-2', isAnwser: true },
     ],
-    explanation: 'O nome científico é Covid-19, do inglês Coronavirus Disease 2019. Chamar essa doença de “vírus chinês”, além de cientificamente incorreto, é bastante ofensivo. Então, na hora de escolher como chamá-lo, fique do lado da ciência.',
+    explanation: 'É o nome oficial do vírus que atinge o mundo em 2020. Foi escolhido pela Organização Mundial da Saúde (OMS) para facilitar a identificação em estudos científicos e também a divulgação na imprensa, além de evitar confusões com outros vírus da mesma família.',
   },
 
   {
