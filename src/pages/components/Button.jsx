@@ -6,7 +6,6 @@ const CustomDiv = styled.div`
   align-content: center;
   align-self: center;
   border-radius: 30px;
-  box-shadow: 0.5px 0.5px 10px ${colors.black};
   color: white;
   display: flex;
   font-family: inherit;
