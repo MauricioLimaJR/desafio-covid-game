@@ -39,35 +39,24 @@ const Question = styled.div`
   color: ${colors.smoky};
   font-weight: bold;
   padding: 5px 1rem 2rem;
-
-  p {
-    padding: 0;
-    margin: 0;
-  }
-  .progress {
-    color: ${colors.razzmatazzPink};
-    font-weight: normal;
-    margin-bottom: 5px;
-  }
-  .current {
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
 `
 
 const ShowQuestion = ({
   question,
-  questionIndex,
-  gameLength,
   handleCorrectResponse = () => {},
+  handleMistake = () => {},
 }) => {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const { question: asking, alternatives, explanation } = question
   const type = 'line'
 
-  const checkAnwser = (isAnwser) => isAnwser
-    ? setIsOpen(true) : Toast.error('Pense melhor...')
+  const checkAnwser = (isAnwser) => {
+    if (isAnwser)  return setIsOpen(true)
+
+    Toast.error('Pense melhor...')
+    handleMistake()
+  }
 
   const correctResponse = () => {
     setIsOpen(false)
@@ -85,9 +74,6 @@ const ShowQuestion = ({
       <Grid item xs={12}>
         <Divider variant='middle'/>
         <Question>
-          <p className='progress'>
-            <span className='current'>{questionIndex + 1}</span>{`ª de ${gameLength}`}
-          </p>
           <p>{asking}</p>
         </Question>
       </Grid>

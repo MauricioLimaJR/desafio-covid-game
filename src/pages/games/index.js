@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 // Material-UI
 import { Grid } from '@material-ui/core'
 // Custom components
@@ -14,10 +15,16 @@ const MainContainer = styled(Grid)`
 `
 
 const Games = () => {
+  const history = useHistory()
+
+  const startGame = gameId => {
+    history.push(`/jogar?id=${gameId}`)
+  }
+
   const games = [
-    { title: 'quiz', game: {} },
-    { title: 'quiz', game: {} },
-    { title: 'quiz', game: {} },
+    { id: '01', title: 'quiz', game: {} },
+    { id: '01', title: 'quiz', game: {} },
+    { id: '01', title: 'quiz', game: {} },
   ]
 
   return (
@@ -29,7 +36,7 @@ const Games = () => {
       {
         games.map((game, k) => (
           <Grid items xs={5} md={3} style={{ margin: '5px' }}>
-            <GameCard title={game.title} textIcon={k + 1} onClick={() => alert('foi')} />
+            <GameCard title={game.title} textIcon={k + 1} onGameBegin={() => startGame(game.id)} />
           </Grid>
         ))
       }
