@@ -6,6 +6,7 @@ import { ThemeProvider } from '@material-ui/core/styles'
 import BodyContent from './pages/components/BodyContent'
 import Footer from './pages/components/Footer'
 import Gameboard from './pages/gameboard/index'
+import Games from './pages/games/index'
 import Header from './pages/components/Header'
 import Landing from './pages/landing/index'
 import Theme from './core/theme'
@@ -30,6 +31,7 @@ function App() {
           <BodyContent className="App">
             <Switch>
               <Route exact path='/' component={Landing} />
+              <Route exact path='/jogos' component={Games} />
               <Route exact path='/jogar' component={Gameboard} />
               <Route path='/' component={Landing} />
             </Switch>

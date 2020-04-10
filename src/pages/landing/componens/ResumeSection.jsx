@@ -38,7 +38,7 @@ const ResumeSection = () => {
       </Grid>
 
       <Grid item xs={12} style={{ marginTop: '1rem' }}>
-        <Link to="/jogar">
+        <Link to="/jogos">
           <Button color="primary">
             JOGAR AGORA
           </Button>
