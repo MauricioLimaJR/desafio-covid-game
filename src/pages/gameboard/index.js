@@ -15,6 +15,10 @@ import {
 import gameSelector from '../../lib/gameSelector'
 
 const BackgroundContainer = styled(Grid)`
+  background: linear-gradient(
+    ${colors.concrete},
+    ${colors.lividBrown}
+  );
   height: 100%;
 `
 
