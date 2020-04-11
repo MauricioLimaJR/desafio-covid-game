@@ -7,9 +7,12 @@ import { Grid } from '@material-ui/core'
 import ShowQuestion from './components/ShowQuestion'
 import GameResume from './components/GameResume'
 // Others
-import gameSelector from '../../lib/gameSelector'
-import VirusImg from '../../static/images/virus.svg'
 import * as colors from '../../constants/colors'
+import {
+  getGameStart,
+  getMatchMistakes,
+  setMatchMistakes } from '../../lib/persistence'
+import gameSelector from '../../lib/gameSelector'
 
 const BackgroundContainer = styled(Grid)`
   height: 100%;
@@ -35,10 +38,10 @@ const Gameboard = () => {
   const query = new URLSearchParams(useLocation().search)
   const { id } = query.get('id')
 
-  const [startGameTime] = React.useState(Date.now())
+  const [startGameTime] = React.useState(getGameStart())
   const [playingTime, setPlayingTime] = React.useState('00:00')
 
-  const [mistakes, setMistakes] = React.useState(0)
+  const [mistakes, setMistakes] = React.useState(getMatchMistakes())
 
   const twoDigitsParser = time => time >= 10 ? `${time}` : `0${time}`
 
@@ -101,7 +104,10 @@ const Gameboard = () => {
               : <ShowQuestion
                 question={questions[currentQuestionIndex]}
                 handleCorrectResponse={nextQuestion}
-                handleMistake={() => setMistakes(v => v + 1)}
+                handleMistake={() => setMistakes(v => {
+                  setMatchMistakes(v + 1)
+                  return v + 1
+                })}
               />
           }
         </Grid>

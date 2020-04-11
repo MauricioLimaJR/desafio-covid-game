@@ -7,6 +7,7 @@ import { Grid } from '@material-ui/core'
 import GameCard from './components/GameCard'
 // Others
 import * as colors from '../../constants/colors'
+import { setGameStart, setMatchMistakes } from '../../lib/persistence'
 
 const MainContainer = styled(Grid)`
   background-color: ${colors.lividBrown};
@@ -19,6 +20,8 @@ const Games = () => {
 
   const startGame = gameId => {
     history.push(`/jogar?id=${gameId}`)
+    setGameStart(Date.now())
+    setMatchMistakes(0)
   }
 
   const games = [
