@@ -5,7 +5,7 @@
       {
         question: 'Quais dessas opções é a mais eficaz para impedir a disseminação do Coronavírus no Brasil?',
         alternatives: [
-          { text: 'Tomando chás e Vitamina C'},
+          { text: 'Tomando chás e vitamina C'},
           { text: 'Isolamento vertical'},
           { text: 'Isolamento social', isAnwser: true },
           { text: 'Usando luvas e máscaras'},
@@ -14,7 +14,7 @@
       },
 
       {
-        question: 'Qual medicamento se mostrou eficaz e oferece a cura para o Coronavírus?',
+        question: 'Qual medicamento se mostrou eficaz e oferece a cura para o COVID-19?',
         alternatives: [
           { text: 'Hidroxicloroquina'},
           { text: 'Dipirona'},
@@ -61,13 +61,13 @@
           { text: 'H1N1'},
           { text: 'Sars-Cov-2', isAnwser: true },
         ],
-        explanation: 'É o nome oficial do vírus que atinge o mundo em 2020. Foi escolhido pela Organização Mundial da Saúde (OMS) para facilitar a identificação em estudos científicos e também a divulgação na imprensa, além de evitar confusões com outros vírus da mesma família.',
+        explanation: 'O nome científico, definido pela OMS, é SARS-CoV-2. Chamar essa doença de “vírus chinês”, além de cientificamente incorreto, é bastante ofensivo. Então, na hora de escolher como chamá-lo, fique no lado da ciência. Ah, COVID-19 é o nome da doença causada pelo Sars-cov-2 ;)',
       },
 
       {
-        question: 'Qual desses grupos corre mais risco na luta contra o Covid19?',
+        question: 'Qual desses grupos corre mais risco na luta contra o Coronavírus?',
         alternatives: [
-          { text: 'Idosos (60 anos)', isAnwser: true },
+          { text: 'Idosos (+60 anos)', isAnwser: true },
           { text: 'Adultos'},
           { text: 'Crianças '},
           { text: 'Animais'},

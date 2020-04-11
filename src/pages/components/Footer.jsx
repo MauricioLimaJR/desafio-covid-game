@@ -7,7 +7,7 @@ import NavMenu from './NavMenu'
 
 const Footer = props => {
   const menuOptions = [
-    { title: 'Desafio Covid 2020', readOnly: true },
+    { title: 'Desafio Covid', readOnly: true },
     { icon: InstagramIcon, external: 'https://www.instagram.com/' },
   ]
 
