@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useHistory } from 'react-router-dom'
 import { HashLink as Link } from 'react-router-hash-link'
 // Material-UI
 import { Grid } from '@material-ui/core'
@@ -8,13 +7,11 @@ import { Grid } from '@material-ui/core'
 import Button from '../../components/Button'
 // Others
 import * as colors from '../../../constants/colors'
+// Images
+import Logo from '../../../static/images/logo.svg'
 
 const MainContainer = styled(Grid)`
   height: 100%;
-`
-
-const Title = styled.h1`
-  color: ${colors.white};
 `
 
 const Description = styled.span`
@@ -22,12 +19,11 @@ const Description = styled.span`
 `
 
 const ResumeSection = () => {
-  const history = useHistory()
 
   return (
     <MainContainer container alignContent='center'>
       <Grid item xs={12}>
-        <Title>DESAVIO COVID-19</Title>
+        <img src={Logo} alt='Desafio Covid' />
       </Grid>
 
       <Grid item xs={12}>
@@ -40,7 +36,7 @@ const ResumeSection = () => {
       <Grid item xs={12} style={{ marginTop: '1rem' }}>
         <Link to="/jogos">
           <Button color="primary">
-            JOGAR AGORA
+            Jogar Agora
           </Button>
         </Link>
       </Grid>
@@ -48,7 +44,7 @@ const ResumeSection = () => {
       <Grid item xs={12} style={{ marginTop: '1rem' }}>
         <Link to="#rules">
           <Button color="secondary">
-            COMO JOGAR
+            Como Jogar
           </Button>
         </Link>
       </Grid>

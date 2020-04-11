@@ -50,11 +50,11 @@ const Button = ({
       }
       case 'secondary': return {
         backgroundColor: colors.white,
-        color: colors.smoky,
+        color: colors.lividBrown,
       }
       case 'primary':
       default: return {
-        backgroundColor: colors.smoky,
+        backgroundColor: colors.lividBrown,
       }
     }
   }

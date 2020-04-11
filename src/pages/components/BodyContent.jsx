@@ -7,12 +7,13 @@ import * as colors from '../../constants/colors'
 
 const Background = styled(Grid)`
   background: linear-gradient(
-    ${colors.cornflowerBlueLigth},
+    /* ${colors.cornflowerBlueLigth}, */
     ${colors.steelBlue},
-    ${colors.blueChill}
+    /* ${colors.blueChill} */
+    ${colors.lividBrown}
   );
   height: 89vh;
-  width: 100vh;
+  width: 100vw;
   text-align: center;
   overflow: hidden;
 `

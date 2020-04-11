@@ -15,6 +15,7 @@ const BackgroundContainer = styled(Grid)`
   height: 95vh;
   scroll-behavior: smooth;
   overflow-y: scroll;
+  overflow-x: hidden;
 `
 
 const Landing = () => {

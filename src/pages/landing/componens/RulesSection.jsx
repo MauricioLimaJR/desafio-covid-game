@@ -86,7 +86,7 @@ const RulesSection = () => {
         <Grid item xs={12} style={{ marginTop: '1rem' }}>
           <Link to="/jogos">
             <Button color="secondary">
-              JOGAR AGORA
+              Jogar Agora
             </Button>
           </Link>
         </Grid>
