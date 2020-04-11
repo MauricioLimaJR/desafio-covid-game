@@ -13,7 +13,7 @@ import {
 import Button from '../../components/Button'
 // Others
 import * as colors from '../../../constants/colors'
-import Award from '../../../static/images/award.svg'
+// import Award from '../../../static/images/award.svg'
 
 const CustomDialogActions = styled(DialogActions)`
   justify-content: center !important;
@@ -26,10 +26,6 @@ const CustomDialog = withStyles(theme => ({
   },
   paper: {
     border: `solid 2px ${colors.smoky}`,
-    backgroundImage: `url(${Award})`,
-    backgroundPosition: '100% 100%',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: '15%',
     [theme.breakpoints.down('md')]: { backgroundSize: '40%' }
   },
 }))(Dialog)

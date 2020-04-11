@@ -34,27 +34,27 @@
       },
 
       {
-        question: 'Quais a opção mais eficaz para higienizar as mãos e evitar contágio?',
+        question: 'Qual opção mais eficaz para higienizar as mãos e evitar contágio?',
         alternatives: [
           { text: 'Álcool gel 70%'},
           { text: 'Água e sabão', isAnwser: true },
-          { text: 'Álcool líguido'},
+          { text: 'Álcool líquido'},
           { text: 'Desinfetante'},
         ],
-        explanation: 'Mesmo os dois tipos de álcool serem muito eficientes na hora de fazer a sua higiene, nada supera a água e sabão. É simples, eficaz e, se bem feita, deixar você seguro.',
+        explanation: 'Álcool em gel 70% e água e sabão são igualmente eficientes na ação antimicrobiana, contra bactérias, fungos e vírus. Entretanto, o álcool não pode simplesmente substituir a água e o sabão, uma vez que a retirada de partículas de sujeiras não pode ser feita com o álcool.',
       },
 
       {
-        question: 'Fake ou News: O novo Coronavírus não consegue sobreviver a temperaturas entre 26º e 27º.',
+        question: 'Fake ou News: O novo Coronavírus não consegue sobreviver a "temperaturas entre 26º e 27º.',
         alternatives: [
           { text: 'Fake', isAnwser: true },
           { text: 'News'},
         ],
-        explanation: 'O Novo Coronavírus consegue facilmente suportar temperaturas superiores à 27º. A diretora do IMT-USP Ester Sabino, afirma: "A temperatura do corpo humano é 36ºC. Portanto, esta afirmativa é falsa".',
+        explanation: 'O Novo Coronavírus consegue facilmente suportar temperaturas superiores à 27º. A diretora do IMT-USP Ester Sabino, afirma: "A temperatura do corpo humano é 36ºC". Portanto, esta afirmativa é falsa.',
       },
 
       {
-        question: 'Qual o nome científico do Coronavírus',
+        question: 'Qual o nome científico do novo Coronavírus',
         alternatives: [
           { text: 'Vírus Chines'},
           { text: 'Covid-19'},
@@ -72,7 +72,7 @@
           { text: 'Crianças '},
           { text: 'Animais'},
         ],
-        explanation: 'O vírus é mais letal para idosos e pessoas com doenças crônicas. A maioria das crianças e jovens adultos que contraírem o vírus serão assintomáticos, ou seja,não apresentarão nenhum sintoma. E sobre o seu pet, fique tranquilo. Estudos mostram que ele vai ficar bem seguro durante a pandemia. ',
+        explanation: 'O vírus é mais letal para idosos e pessoas com doenças crônicas. Boa parte das crianças, jovens e adultos podem contrair o vírus assintomaticamente, ou seja, não apresentarão nenhum sintoma. E sobre o seu pet, fique tranquilo. Estudos mostram que ele vai ficar bem seguro durante a pandemia.',
       },
 
       {

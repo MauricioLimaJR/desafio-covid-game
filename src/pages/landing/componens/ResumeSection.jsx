@@ -18,7 +18,7 @@ const Description = styled.span`
   color: ${colors.athensGray};
 `
 
-const ResumeSection = () => {
+const ResumeSection = ({ start }) => {
 
   return (
     <MainContainer container alignContent='center'>
@@ -34,11 +34,11 @@ const ResumeSection = () => {
       </Grid>
 
       <Grid item xs={12} style={{ marginTop: '1rem' }}>
-        <Link to="/jogos">
-          <Button color="primary">
+        {/* <Link to="/jogos"> */}
+          <Button color="primary" onClick={start}>
             Jogar Agora
           </Button>
-        </Link>
+        {/* </Link> */}
       </Grid>
 
       <Grid item xs={12} style={{ marginTop: '1rem' }}>
