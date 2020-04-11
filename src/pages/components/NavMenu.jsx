@@ -46,8 +46,8 @@ const NavMenu = ({
   const history = useHistory()
 
   const color = history.location.pathname === '/signon' ? 'secondary' : 'primary'
-  const textColor = color === 'primary' ? colors.white : colors.smoky
-  const bgColor = color === 'primary' ? colors.smoky : colors.white
+  const textColor = color === 'primary' ? colors.white : colors.lividBrown
+  const bgColor = color === 'primary' ? colors.lividBrown : colors.white
 
   const getRouteProp = option => {
     if (option.internal) return { onClick: () => history.push(option.internal) }

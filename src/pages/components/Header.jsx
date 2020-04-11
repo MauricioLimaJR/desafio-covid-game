@@ -9,12 +9,11 @@ import * as colors from '../../constants/colors'
 
 const HeaderContainer = styled(Grid)`
   background-color: ${colors.white};
-  /* border-bottom: solid 1px ${colors.smoky}; */
   height: 6vh;
-  padding: 10px 0 4px 0;
+  padding: 10px 0 10px 0;
 
   p {
-    color: ${colors.smoky};
+    color: ${colors.lividBrown};
     font-weight: bold;
     font-size: 2rem;
   }

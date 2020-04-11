@@ -1,6 +1,6 @@
 import React from 'react'
 // Material-UI
-import { Grid } from '@material-ui/core'
+import { Grid, Divider } from '@material-ui/core'
 import InstagramIcon from '@material-ui/icons/Instagram'
 // Custom components
 import NavMenu from './NavMenu'
@@ -19,6 +19,7 @@ const Footer = props => {
       {...props}
     >
       <Grid item xs>
+        <Divider variant='middle'/>
         <NavMenu options={menuOptions} variant={'text'} />
       </Grid>
     </Grid>
