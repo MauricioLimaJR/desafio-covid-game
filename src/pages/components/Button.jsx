@@ -44,6 +44,10 @@ const Button = ({
 }) => {
   const setColor = color => {
     switch (color) {
+      case 'alt': return {
+        backgroundColor: colors.razzmatazzDarkPink,
+        color: colors.white,
+      }
       case 'secondary': return {
         backgroundColor: colors.white,
         color: colors.smoky,

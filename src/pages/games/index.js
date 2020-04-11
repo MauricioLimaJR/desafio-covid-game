@@ -25,9 +25,7 @@ const Games = () => {
   }
 
   const games = [
-    { id: '01', title: 'quiz', game: {} },
-    { id: '01', title: 'quiz', game: {} },
-    { id: '01', title: 'quiz', game: {} },
+    { id: '01', title: 'Quiz Inicial' },
   ]
 
   return (

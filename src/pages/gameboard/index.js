@@ -54,10 +54,12 @@ const Gameboard = () => {
     setPlayingTime(timeToString)
   }
 
+  const [intervalID, setIntervalID] = React.useState(false)
+
   const timeCounter = () => setInterval(() => timeUp(), 1000)
 
   React.useEffect(() => {
-    timeCounter()
+    setIntervalID(timeCounter())
   }, [1])
 
   const game = gameSelector(id)
@@ -69,6 +71,9 @@ const Gameboard = () => {
     if ((currentQuestionIndex + 1) < questions.length) {
       return setCurrentQuestionIndex(v => v + 1)
     }
+
+    // Game End
+    clearInterval(intervalID)
     setResumeGame(true)
   }
 
@@ -80,27 +85,34 @@ const Gameboard = () => {
       alignContent="flex-start"
     >
       <GameContent container alignContent="flex-start" data-playing={false}>
-        <Grid item xs={12} style={{ backgroundColor: 'white', height: 'min-content' }}>
-          <GameData container>
-            <Grid item xs={2}>
-              {playingTime}
+        {
+          !resumeGame ? (
+            <Grid item xs={12} style={{ backgroundColor: 'white', height: 'min-content' }}>
+              <GameData container>
+                <Grid item xs={2}>
+                  {playingTime}
+                </Grid>
+                <Grid item xs={3}>
+                  {`Erros: ${mistakes}`}
+                </Grid>
+                <Grid item xs={5}>
+                  <b>{game.title}</b>
+                </Grid>
+                <Grid item xs={2}>
+                 <p><b>{currentQuestionIndex + 1}</b>{`/${questions.length}`}</p>
+                </Grid>
+              </GameData>
             </Grid>
-            <Grid item xs={3}>
-              {`Erros: ${mistakes}`}
-            </Grid>
-            <Grid item xs={5}>
-              <b>{game.title}</b>
-            </Grid>
-            <Grid item xs={2}>
-             <p><b>{currentQuestionIndex + 1}</b>{`/${questions.length}`}</p>
-            </Grid>
-          </GameData>
-        </Grid>
+          ) : null
+        }
 
         <Grid item xs={12}>
           {
             resumeGame
-              ? <GameResume />
+              ? <GameResume
+                  gameTime={playingTime}
+                  mistakes={mistakes}
+                />
               : <ShowQuestion
                 question={questions[currentQuestionIndex]}
                 handleCorrectResponse={nextQuestion}
