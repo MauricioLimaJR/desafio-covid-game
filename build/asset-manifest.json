@@ -1,30 +1,31 @@
 {
   "files": {
     "main.css": "/game-19/static/css/main.0a203dcb.chunk.css",
-    "main.js": "/game-19/static/js/main.00913896.chunk.js",
-    "main.js.map": "/game-19/static/js/main.00913896.chunk.js.map",
+    "main.js": "/game-19/static/js/main.fa1aa04f.chunk.js",
+    "main.js.map": "/game-19/static/js/main.fa1aa04f.chunk.js.map",
     "runtime-main.js": "/game-19/static/js/runtime-main.9242e16e.js",
     "runtime-main.js.map": "/game-19/static/js/runtime-main.9242e16e.js.map",
     "static/css/2.f42e59c9.chunk.css": "/game-19/static/css/2.f42e59c9.chunk.css",
-    "static/js/2.62fd04c8.chunk.js": "/game-19/static/js/2.62fd04c8.chunk.js",
-    "static/js/2.62fd04c8.chunk.js.map": "/game-19/static/js/2.62fd04c8.chunk.js.map",
+    "static/js/2.5460a77f.chunk.js": "/game-19/static/js/2.5460a77f.chunk.js",
+    "static/js/2.5460a77f.chunk.js.map": "/game-19/static/js/2.5460a77f.chunk.js.map",
     "index.html": "/game-19/index.html",
-    "precache-manifest.e796af631a29d7077e413aa05da1cc07.js": "/game-19/precache-manifest.e796af631a29d7077e413aa05da1cc07.js",
+    "precache-manifest.0616133f121461f5a910e5fd8058c4ad.js": "/game-19/precache-manifest.0616133f121461f5a910e5fd8058c4ad.js",
     "service-worker.js": "/game-19/service-worker.js",
     "static/css/2.f42e59c9.chunk.css.map": "/game-19/static/css/2.f42e59c9.chunk.css.map",
     "static/css/main.0a203dcb.chunk.css.map": "/game-19/static/css/main.0a203dcb.chunk.css.map",
-    "static/js/2.62fd04c8.chunk.js.LICENSE.txt": "/game-19/static/js/2.62fd04c8.chunk.js.LICENSE.txt",
+    "static/js/2.5460a77f.chunk.js.LICENSE.txt": "/game-19/static/js/2.5460a77f.chunk.js.LICENSE.txt",
     "static/media/award.svg": "/game-19/static/media/award.ebd41b87.svg",
     "static/media/background.png": "/game-19/static/media/background.ca8f2220.png",
     "static/media/book.svg": "/game-19/static/media/book.b9372177.svg",
     "static/media/game.svg": "/game-19/static/media/game.fcb188cb.svg",
-    "static/media/virus.svg": "/game-19/static/media/virus.9a872911.svg"
+    "static/media/logo.svg": "/game-19/static/media/logo.38d0ad3e.svg",
+    "static/media/podium.svg": "/game-19/static/media/podium.e1997486.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.9242e16e.js",
     "static/css/2.f42e59c9.chunk.css",
-    "static/js/2.62fd04c8.chunk.js",
+    "static/js/2.5460a77f.chunk.js",
     "static/css/main.0a203dcb.chunk.css",
-    "static/js/main.00913896.chunk.js"
+    "static/js/main.fa1aa04f.chunk.js"
   ]
 }
