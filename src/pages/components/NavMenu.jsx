@@ -20,7 +20,7 @@ const styles = (theme) => {
   Styled.Option = styled(Grid)`
     color: ${p => p['data-color']};
     display: inline;
-    margin: 0 15px !important;
+    margin: 0 10px !important;
     ${theme.breakpoints.down('md')} {
       margin: 0 3px !important;
     }

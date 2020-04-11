@@ -10,7 +10,6 @@ import * as colors from '../../constants/colors'
 const HeaderContainer = styled(Grid)`
   background-color: ${colors.white};
   height: 6vh;
-  padding: 10px 0 10px 0;
 
   p {
     color: ${colors.lividBrown};

@@ -21,7 +21,7 @@ const Background = styled(Grid)`
 const BodyContent = ({ children }) => {
   const history = useHistory()
   const height = history.location.pathname === '/'
-    ? { height: '95vh' } : {}
+    ? { height: '94.5vh' } : {}
 
   return (
     <Background container justify="center" alignContent='center' direction="row" style={height}>

@@ -14,7 +14,7 @@ import Theme from './core/theme'
 import * as colors from './constants/colors'
 
 const StyledCanvas = styled.div`
-  background-color: ${colors.white};
+  background-color: ${colors.lividBrown};
   font-family: !important ${'Roboto, Regular, Helvetica'};
   overflow: hidden;
   text-align: center;
