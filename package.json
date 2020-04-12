@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^7.1.2",
     "add": "^2.0.6",
     "axios": "^0.19.2",
+    "formik": "^2.1.4",
     "history": "^4.10.1",
     "js-cookie": "^2.2.1",
     "react": "^16.13.1",
@@ -19,7 +20,8 @@
     "react-scripts": "3.4.1",
     "react-toastify": "^5.5.0",
     "styled-components": "^5.0.1",
-    "yarn": "^1.22.4"
+    "yarn": "^1.22.4",
+    "yup": "^0.28.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -5,6 +5,7 @@ import { Grid } from '@material-ui/core'
 import { Update, Error } from '@material-ui/icons'
 // Custom components
 import Button from '../../components/Button'
+import PlayerFormModal from '../../components/modals/PlayerFormModal'
 import Toast from '../../../lib/toastfy'
 // Others
 import * as colors from '../../../constants/colors'
@@ -39,12 +40,15 @@ const GameResume = ({
 }) => {
   const onDev = () => Toast.show('Recurso em densenvolvimento')
 
+  const [isOpen, setIsOpen] = React.useState(true)
+
   return (
     <MainContainer
       container
       alignContent="center"
       justify="center"
     >
+      <PlayerFormModal open={isOpen}/>
       <Grid item xs={12}>
         <img height={150} src={Podium} alt='podium' />
       </Grid>
