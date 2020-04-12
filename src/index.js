@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom'
 import './static/css/index.css'
 import './static/js/toastfyStyles'
 // Custom components
+import './firebase/firebase'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
