@@ -69,7 +69,7 @@ const Gameboard = () => {
   const game = gameSelector(id)
   const questions = game.alternatives
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0)
-  const [resumeGame, setResumeGame] = React.useState(true)
+  const [resumeGame, setResumeGame] = React.useState(false)
 
   const nextQuestion = () => {
     if ((currentQuestionIndex + 1) < questions.length) {

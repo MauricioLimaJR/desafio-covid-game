@@ -12,10 +12,12 @@ import {
   TextField
 } from '@material-ui/core'
 // Custom components
+import firebase from '../../../firebase/firebase'
 import Button from '../Button'
 // Others
 import * as colors from '../../../constants/colors'
 // import Award from '../../../static/images/award.svg'
+import Toast from '../../../lib/toastfy'
 import yup from '../../../lib/yup'
 
 const CustomDialogActions = styled(DialogActions)`
@@ -58,11 +60,11 @@ const pStyle = {
 }
 
 const PlayerFormModal = ({
-  explanation,
-  actionLabel,
   open,
   handleClose
 }) => {
+  const db = firebase.firestore()
+
   const initialValues={ name: '', instagram: '@' }
 
   const validationSchema = yup.object().shape({
@@ -70,13 +72,19 @@ const PlayerFormModal = ({
   })
 
   const onSubmit = async (values, formikBag) => {
-    alert('foi')
+    try {
+      const { name, instagram } = values
+      await db.collection('users').add({ name, instagram })
+
+      handleClose(name)
+    } catch (err) {
+      Toast.error('Erro ao salvar nome do jogador')
+    }
   }
 
   return (
     <CustomDialog
       open={open}
-      onClose={handleClose}
       aria-labelledby="customized-dialog-title"
     >
       <DialogContent>
@@ -84,71 +92,64 @@ const PlayerFormModal = ({
           {/* <Grid container direction='row' justify='flex-start' spacing={1}>
           </Grid> */}
 
-        <Formik
-          initialValues={initialValues}
-          validationSchema={validationSchema}
-          onSubmit={onSubmit}
-        >
-          {({ errors, touched }) => (
-            <Form>
-              <Grid container direction='row' justify='center' spacing={2} >
-                <Grid item xs={12}>
-                  <p style={pStyle}><b>Qual seu nome?</b></p>
-                  <p style={pStyle}>Caso você entre no ranking, te chamaremos assim</p>
-                </Grid>
+          <Formik
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={onSubmit}
+          >
+            {({ errors, touched }) => (
+              <Form>
+                <Grid container direction='row' justify='center' spacing={2} >
+                  <Grid item xs={12}>
+                    <p style={pStyle}><b>Qual seu nome?</b></p>
+                    <p style={pStyle}>Caso você entre no ranking, te chamaremos assim</p>
+                  </Grid>
 
-                <Grid item xs={12}>
-                  {/* Name field */}
-                  <Field name='name'>
-                    {({ field }) => (
-                      <CustomTextField
-                        {...field}
-                        error={errors['name'] && touched['name']}
-                        id="standard-error-helper-text"
-                        label={'Seu nome'}
-                        helperText={errors['name'] || null}
-                      />
-                    )}
-                  </Field>
-                </Grid>
+                  <Grid item xs={12}>
+                    {/* Name field */}
+                    <Field name='name'>
+                      {({ field }) => (
+                        <CustomTextField
+                          {...field}
+                          error={errors['name'] && touched['name']}
+                          id="standard-error-helper-text"
+                          label={'Seu nome'}
+                          helperText={errors['name'] || null}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
 
-                {/* Instagram field */}
-                <Grid item xs={12}>
-                  <Field name='instagram'>
-                    {({ field }) => (
-                      <CustomTextField
-                        {...field}
-                        error={errors['instagram'] && touched['instagram']}
-                        id="standard-error-helper-text"
-                        label={'Seu instagram (opcional)'}
-                      />
-                    )}
-                  </Field>
-                </Grid>
+                  {/* Instagram field */}
+                  <Grid item xs={12}>
+                    <Field name='instagram'>
+                      {({ field }) => (
+                        <CustomTextField
+                          {...field}
+                          error={errors['instagram'] && touched['instagram']}
+                          id="standard-error-helper-text"
+                          label={'Seu instagram (opcional)'}
+                        />
+                      )}
+                    </Field>
+                  </Grid>
 
-                {/* Submit btn */}
-                <Grid item xs={12}>
-                  <Button
-                    color='primary'
-                    type='submit'
-                    onClick={handleClose}
-                  >
-                    Salvar
-                  </Button>
+                  {/* Submit btn */}
+                  <Grid item xs={12}>
+                    <Button
+                      color='primary'
+                      type='submit'
+                      onClick={handleClose}
+                    >
+                      Salvar
+                    </Button>
+                  </Grid>
                 </Grid>
-              </Grid>
-            </Form>
-          )}
-        </Formik>
+              </Form>
+            )}
+          </Formik>
         </DialogContentText>
-
       </DialogContent>
-
-      {/* <CustomDialogActions>
-        <Button color='primary' onClick={handleClose}>
-          {actionLabel}
-        </Button>
-      </CustomDialogActions> */}
     </CustomDialog>
   )
 }

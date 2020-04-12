@@ -9,7 +9,7 @@ import PlayerFormModal from '../../components/modals/PlayerFormModal'
 import Toast from '../../../lib/toastfy'
 // Others
 import * as colors from '../../../constants/colors'
-import Podium from '../../../static/images/podium.svg'
+import Award from '../../../static/images/award.svg'
 
 const MainContainer = styled(Grid)`
   height: 100%;
@@ -40,7 +40,13 @@ const GameResume = ({
 }) => {
   const onDev = () => Toast.show('Recurso em densenvolvimento')
 
+  const [username, setUsername] = React.useState(null)
+
   const [isOpen, setIsOpen] = React.useState(true)
+  const handleCloseModal = username => {
+    setUsername(username)
+    setIsOpen(false)
+  }
 
   return (
     <MainContainer
@@ -48,12 +54,14 @@ const GameResume = ({
       alignContent="center"
       justify="center"
     >
-      <PlayerFormModal open={isOpen}/>
+      <PlayerFormModal open={isOpen} handleClose={handleCloseModal}/>
       <Grid item xs={12}>
-        <img height={150} src={Podium} alt='podium' />
+        <img height={150} src={Award} alt='podium' />
       </Grid>
       <Grid item xs={12}>
-        <Title>Parabéns</Title>
+        <Title>
+          {`Parabéns, ${typeof username === 'string' ? username : ''}`}
+        </Title>
       </Grid>
 
       {/* Game Data */}
@@ -68,7 +76,7 @@ const GameResume = ({
 
       <Grid item xs={12}>
         <SubTitle>
-          Informação é poder! Compartilhe esse jogo com mais pessoas. #VamosVencerOCoronavirus
+          Informação é poder! Compartilhe esse jogo com mais pessoas. #DesafioCovid
         </SubTitle>
       </Grid>
 
