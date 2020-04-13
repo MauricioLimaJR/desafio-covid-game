@@ -30,6 +30,16 @@ const CustomDialog = withStyles(theme => ({
   },
 }))(Dialog)
 
+const Explanation = styled.p`
+  color: ${colors.lividBrown};
+  margin: 0;
+`
+
+const Title = styled(Explanation)`
+  font-size: 1.5rem;
+  font-weight: bold;
+`
+
 const ExplanationModal = ({
   explanation,
   actionLabel,
@@ -46,9 +56,14 @@ const ExplanationModal = ({
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
           <Grid container direction='row' justify='flex-start' spacing={1}>
+            {/* Title */}
+            <Grid item xs={12}>
+              <Title>{'Correto!'}</Title>
+            </Grid>
+
             {/* Explanation text */}
             <Grid item xs={12}>
-              <h4>{explanation}</h4>
+              <Explanation>{explanation}</Explanation>
             </Grid>
           </Grid>
         </DialogContentText>
