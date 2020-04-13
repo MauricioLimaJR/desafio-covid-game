@@ -15,6 +15,7 @@ import { getShareUrl } from '../../../lib/utils'
 
 const MainContainer = styled(Grid)`
   height: 100%;
+  padding: 15px 10px;
   text-align: center;
 
   h3 {
@@ -69,7 +70,7 @@ const GameResume = ({
     >
       <PlayerFormModal open={isOpen} handleClose={handleCloseModal}/>
       <Grid item xs={12}>
-        <img height={150} src={Award} alt='podium' />
+        <img height={120} src={Award} alt='podium' />
       </Grid>
       <Grid item xs={12}>
         <Title>

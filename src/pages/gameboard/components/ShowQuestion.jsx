@@ -8,16 +8,15 @@ import ExplanationModal from './ExplanationModal'
 import * as colors from '../../../constants/colors'
 import Toast from '../../../lib/toastfy'
 
-const AnwserBtn = ({ handleClick, selected, children }) => {
+const AnwserBtn = ({ handleClick, selected, children, isFake, isTrue }) => {
   const LineButton = styled.div`
-    background-color: ${selected ? colors.lividBrown : colors.white};
+    background-color: ${selected ? colors.lividBrown : colors.razzmatazzPink};
     border-radius: 30px;
-    border-bottom: solid 4px ${colors.eastbay};
-    color: ${colors.eastbay};
+    border-bottom: solid 4px ${colors.razzmatazzDarkPink};
+    color: ${colors.white};
     margin: 0 auto;
     padding: 13px 25px;
     width: 200px;
-
     font-size-adjust: 10;
 
     :hover {
@@ -27,8 +26,27 @@ const AnwserBtn = ({ handleClick, selected, children }) => {
     }
   `
 
+  const FakeButton = styled(LineButton)`
+    background-color: ${colors.white};
+    color: ${colors.pomegranateRed};
+    border: solid 4px ${colors.pomegranateRed};
+  `
+
+  const TrueButton = styled(LineButton)`
+    background-color: ${colors.white};
+    color: ${colors.parsleyGreen};
+    border: solid 4px ${colors.parsleyGreen};
+  `
+
+  const getButton = () => {
+    if (isFake) return <FakeButton>{children}</FakeButton>
+    else if (isTrue) return <TrueButton>{children}</TrueButton>
+
+    return <LineButton>{children}</LineButton>
+  }
+
   return (
-    <a onClick={handleClick}><LineButton>{children}</LineButton></a>
+    <a onClick={handleClick}>{getButton()}</a>
   )
 }
 
@@ -48,8 +66,7 @@ const ShowQuestion = ({
 }) => {
   const [isOpen, setIsOpen] = React.useState(false)
 
-  const { question: asking, alternatives, explanation } = question
-  const type = 'line'
+  const { question: asking, alternatives, explanation, type = 'line' } = question
 
   const checkAnwser = (isAnwser) => {
     if (isAnwser)  return setIsOpen(true)
@@ -80,19 +97,33 @@ const ShowQuestion = ({
 
       {/* Alternatives */}
       {
-        alternatives.map((alt, k) => {
-          return type === 'line'
+        type === 'line'
           ? (
-            <Grid item xs={12}>
-              <AnwserBtn handleClick={() => checkAnwser(alt.isAnwser)}>
-                {alt.text}
-              </AnwserBtn>
-            </Grid>
+            alternatives.map((alt, k) => (
+              <Grid item xs={12}>
+                <AnwserBtn handleClick={() => checkAnwser(alt.isAnwser)}>
+                  {alt.text}
+                </AnwserBtn>
+              </Grid>
+            ))
           )
           : (
-            <p>{alt.text}</p>
+            <>
+              <Grid item xs={12}>
+                {/* Fake */}
+                <AnwserBtn isFake handleClick={() => checkAnwser(alternatives.isFake)}>
+                  Fake
+                </AnwserBtn>
+              </Grid>
+
+              <Grid item xs={12}>
+                {/* News */}
+                <AnwserBtn isTrue handleClick={() => checkAnwser(!alternatives.isFake)}>
+                  News
+                </AnwserBtn>
+              </Grid>
+            </>
           )
-        })
       }
 
       {/* Anwser modal */}
