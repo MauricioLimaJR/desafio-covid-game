@@ -7,6 +7,7 @@ import ExplanationModal from './ExplanationModal'
 // Others
 import * as colors from '../../../constants/colors'
 import Toast from '../../../lib/toastfy'
+import { randomErrorMessages } from '../../../lib/utils'
 
 const AnwserBtn = ({ handleClick, selected, children, isFake, isTrue }) => {
   const LineButton = styled.div`
@@ -69,9 +70,9 @@ const ShowQuestion = ({
   const { question: asking, alternatives, explanation, type = 'line' } = question
 
   const checkAnwser = (isAnwser) => {
-    if (isAnwser)  return setIsOpen(true)
+    if (isAnwser) return setIsOpen(true)
 
-    Toast.singleError('Pense melhor...')
+    Toast.singleError(randomErrorMessages())
     handleMistake()
   }
 
