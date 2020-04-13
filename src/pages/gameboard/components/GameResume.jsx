@@ -11,6 +11,7 @@ import Toast from '../../../lib/toastfy'
 // Others
 import * as colors from '../../../constants/colors'
 import Award from '../../../static/images/award.svg'
+import { getShareUrl } from '../../../lib/utils'
 
 const MainContainer = styled(Grid)`
   height: 100%;
@@ -41,6 +42,7 @@ const GameResume = ({
 }) => {
   const db = firebase.firestore()
 
+  const score = '680'
   const onDev = () => Toast.show('Recurso em densenvolvimento')
 
   const [username, setUsername] = React.useState(null)
@@ -94,16 +96,15 @@ const GameResume = ({
       {/* Actions */}
       <Grid items xs={12}>
         <Button
-          onClick={onDev}
           color='alt'
           size='large'
-          external={'https://api.whatsapp.com/send?text=Voc%C3%AA%20foi%20desafio%20por%20mim%20a%20combater%20o%20novo%20%23coronavirus%20da%20maneira%20mais%20segura%20e%20legal%20que%20existe%21%21%0AAcesse%20o%20Desafio%20Covid%20para%20jogar%20um%20quiz%20sobre%20o%20novo%20coronav%C3%ADrus%20e%20tente%20fazer%20uma%20pontua%C3%A7%C3%A3o%20maior%20que%20a%20minha%20%F0%9F%98%8C%0A%0Adesafiocovid.com'}
+          external={getShareUrl(score)}
         >
           Compartilhar no Whatsapp
         </Button>
       </Grid>
-      <Grid items xs={12}>
-        <Button  onClick={onDev} color='secondary' size='large'>Ver Ranking</Button>
+      <Grid items xs={12} style={{ marginTop: '10px' }}>
+        <Button onClick={onDev} color='secondary' size='large'>Ver Ranking</Button>
       </Grid>
     </MainContainer>
   )

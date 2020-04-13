@@ -91,17 +91,16 @@ const Button = ({
   }
 
   return (
-
     external
       ? (
-        <CustomHref {...props}>
+        <CustomHref href={external} target='./' {...props}>
           <CustomDiv style={btnStyle}>
             {children}
           </CustomDiv>
         </CustomHref>
       )
       : (
-        <CustomButton href={external} {...props}>
+        <CustomButton {...props}>
           <CustomDiv style={btnStyle}>
             {children}
           </CustomDiv>

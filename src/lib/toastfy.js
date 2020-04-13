@@ -8,6 +8,7 @@ class Toast {
   idsTypes = {
     success: 10,
     error: 20,
+    singleError: 25,
     show: 30,
   }
 
@@ -41,6 +42,19 @@ class Toast {
       return toast.error(msg, { ...this.style })
     }
     return null
+  }
+
+  /**
+   * Notify a question error message
+   *
+   * @param {String} msg - message to be printed
+   */
+  singleError = (msg) => {
+    toast.configure()
+    if (!this.isReady(this.idsTypes.singleError)) {
+      toast.dismiss(this.idsTypes.singleError)
+    }
+    return toast.error(msg, { toastId: this.idsTypes.singleError, ...this.style })
   }
 
   /**

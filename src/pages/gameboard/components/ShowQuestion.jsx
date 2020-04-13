@@ -54,7 +54,7 @@ const ShowQuestion = ({
   const checkAnwser = (isAnwser) => {
     if (isAnwser)  return setIsOpen(true)
 
-    Toast.error('Pense melhor...')
+    Toast.singleError('Pense melhor...')
     handleMistake()
   }
 
