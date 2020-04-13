@@ -11,7 +11,7 @@ import Toast from '../../../lib/toastfy'
 // Others
 import * as colors from '../../../constants/colors'
 import Award from '../../../static/images/award.svg'
-import { getShareUrl } from '../../../lib/utils'
+import { getShareUrl, getGameScore } from '../../../lib/utils'
 
 const MainContainer = styled(Grid)`
   height: 100%;
@@ -35,17 +35,24 @@ const SubTitle = styled.p`
 
 const Title = styled(SubTitle)`
   font-size: 1.5rem;
+  margin-bottom: 5px;
+`
+
+const Score = styled(SubTitle)`
+  color: ${colors.razzmatazzDarkPink};
+  font-size: 1.3rem;
+  font-weight: bold;
 `
 
 const GameResume = ({
   time,
   mistakes,
+  questionsAmount,
 }) => {
   const db = firebase.firestore()
-
-  const score = '680'
   const onDev = () => Toast.show('Recurso em densenvolvimento')
 
+  const score = getGameScore(time, mistakes, questionsAmount)
   const [username, setUsername] = React.useState(null)
 
   const [isOpen, setIsOpen] = React.useState(true)
@@ -53,13 +60,13 @@ const GameResume = ({
     try {
       setUsername(user.name)
       setIsOpen(false)
-
       Toast.show('Salvando dados da partida...')
-      await db.collection('users').add({ time, mistakes, ...user })
+
+
+      await db.collection('users').add({ score, time, mistakes, ...user })
     } catch (err) {
       Toast.error('Algum erro aconteceu aqui..')
     }
-
   }
 
   return (
@@ -76,6 +83,9 @@ const GameResume = ({
         <Title>
           {`Parabéns, ${typeof username === 'string' ? username : ''}`}
         </Title>
+        <Score>
+          {`${score} pontos`}
+        </Score>
       </Grid>
 
       {/* Game Data */}

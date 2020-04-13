@@ -116,6 +116,7 @@ const Gameboard = () => {
               ? <GameResume
                   time={playingTime}
                   mistakes={mistakes}
+                  questionsAmount={questions.length}
                 />
               : <ShowQuestion
                 question={questions[currentQuestionIndex]}
