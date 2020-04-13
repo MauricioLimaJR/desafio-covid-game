@@ -28,6 +28,13 @@ const CustomButton = styled.button`
   outline: none;
 `
 
+const CustomHref = styled.a`
+  background: none;
+  border: none;
+  outline: none;
+  text-decoration: none;
+`
+
 /**
  * Custom Button
  *
@@ -40,6 +47,7 @@ const Button = ({
   size = 'medium',
   variant = 'contained',
   children,
+  external,
   ...props
 }) => {
   const setColor = color => {
@@ -83,11 +91,23 @@ const Button = ({
   }
 
   return (
-    <CustomButton {...props}>
-      <CustomDiv style={btnStyle}>
-        {children}
-      </CustomDiv>
-    </CustomButton>
+
+    external
+      ? (
+        <CustomHref {...props}>
+          <CustomDiv style={btnStyle}>
+            {children}
+          </CustomDiv>
+        </CustomHref>
+      )
+      : (
+        <CustomButton href={external} {...props}>
+          <CustomDiv style={btnStyle}>
+            {children}
+          </CustomDiv>
+        </CustomButton>
+      )
+
   )
 }
 

@@ -12,18 +12,12 @@ import {
   TextField
 } from '@material-ui/core'
 // Custom components
-import firebase from '../../../firebase/firebase'
 import Button from '../Button'
 // Others
 import * as colors from '../../../constants/colors'
 // import Award from '../../../static/images/award.svg'
 import Toast from '../../../lib/toastfy'
 import yup from '../../../lib/yup'
-
-const CustomDialogActions = styled(DialogActions)`
-  justify-content: center !important;
-  margin-bottom: 10px;
-`
 
 const CustomDialog = withStyles(theme => ({
   root: {
@@ -63,7 +57,6 @@ const PlayerFormModal = ({
   open,
   handleClose
 }) => {
-  const db = firebase.firestore()
 
   const initialValues={ name: '', instagram: '@' }
 
@@ -74,11 +67,9 @@ const PlayerFormModal = ({
   const onSubmit = async (values, formikBag) => {
     try {
       const { name, instagram } = values
-      await db.collection('users').add({ name, instagram })
-
-      handleClose(name)
+      handleClose({ name, instagram })
     } catch (err) {
-      Toast.error('Erro ao salvar nome do jogador')
+      Toast.error('Algum erro aconteceu..')
     }
   }
 
@@ -89,9 +80,6 @@ const PlayerFormModal = ({
     >
       <DialogContent>
         <DialogContentText id="alert-dialog-description">
-          {/* <Grid container direction='row' justify='flex-start' spacing={1}>
-          </Grid> */}
-
           <Formik
             initialValues={initialValues}
             validationSchema={validationSchema}
@@ -136,11 +124,7 @@ const PlayerFormModal = ({
 
                   {/* Submit btn */}
                   <Grid item xs={12}>
-                    <Button
-                      color='primary'
-                      type='submit'
-                      onClick={handleClose}
-                    >
+                    <Button color='primary' type='submit'>
                       Salvar
                     </Button>
                   </Grid>

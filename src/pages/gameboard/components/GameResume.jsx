@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Grid } from '@material-ui/core'
 import { Update, Error } from '@material-ui/icons'
 // Custom components
+import firebase from '../../../firebase/firebase'
 import Button from '../../components/Button'
 import PlayerFormModal from '../../components/modals/PlayerFormModal'
 import Toast from '../../../lib/toastfy'
@@ -35,17 +36,27 @@ const Title = styled(SubTitle)`
 `
 
 const GameResume = ({
-  gameTime,
+  time,
   mistakes,
 }) => {
+  const db = firebase.firestore()
+
   const onDev = () => Toast.show('Recurso em densenvolvimento')
 
   const [username, setUsername] = React.useState(null)
 
   const [isOpen, setIsOpen] = React.useState(true)
-  const handleCloseModal = username => {
-    setUsername(username)
-    setIsOpen(false)
+  const handleCloseModal = async user => {
+    try {
+      setUsername(user.name)
+      setIsOpen(false)
+
+      Toast.show('Salvando dados da partida...')
+      await db.collection('users').add({ time, mistakes, ...user })
+    } catch (err) {
+      Toast.error('Algum erro aconteceu aqui..')
+    }
+
   }
 
   return (
@@ -67,7 +78,7 @@ const GameResume = ({
       {/* Game Data */}
       <Grid item xs={12}>
         <b>Tempo de jogo</b>
-        <h3>{gameTime}</h3>
+        <h3>{time}</h3>
       </Grid>
       <Grid item xs={12}>
         <b>Erros cometidos:</b>
@@ -82,10 +93,17 @@ const GameResume = ({
 
       {/* Actions */}
       <Grid items xs={12}>
-        <Button onClick={onDev} color='alt' size='large'>Compartilhar no Whatsapp</Button>
+        <Button
+          onClick={onDev}
+          color='alt'
+          size='large'
+          external={'https://api.whatsapp.com/send?text=Voc%C3%AA%20foi%20desafio%20por%20mim%20a%20combater%20o%20novo%20%23coronavirus%20da%20maneira%20mais%20segura%20e%20legal%20que%20existe%21%21%0AAcesse%20o%20Desafio%20Covid%20para%20jogar%20um%20quiz%20sobre%20o%20novo%20coronav%C3%ADrus%20e%20tente%20fazer%20uma%20pontua%C3%A7%C3%A3o%20maior%20que%20a%20minha%20%F0%9F%98%8C%0A%0Adesafiocovid.com'}
+        >
+          Compartilhar no Whatsapp
+        </Button>
       </Grid>
       <Grid items xs={12}>
-        <Button onClick={onDev} color='secondary' size='large'>Ver Ranking</Button>
+        <Button  onClick={onDev} color='secondary' size='large'>Ver Ranking</Button>
       </Grid>
     </MainContainer>
   )

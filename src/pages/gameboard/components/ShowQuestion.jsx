@@ -10,7 +10,7 @@ import Toast from '../../../lib/toastfy'
 
 const AnwserBtn = ({ handleClick, selected, children }) => {
   const LineButton = styled.div`
-    background-color: ${selected ? colors.lividBrown : colors.concrete};
+    background-color: ${selected ? colors.lividBrown : colors.white};
     border-radius: 30px;
     border-bottom: solid 4px ${colors.eastbay};
     color: ${colors.eastbay};

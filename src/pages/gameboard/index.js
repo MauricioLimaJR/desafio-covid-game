@@ -114,7 +114,7 @@ const Gameboard = () => {
           {
             resumeGame
               ? <GameResume
-                  gameTime={playingTime}
+                  time={playingTime}
                   mistakes={mistakes}
                 />
               : <ShowQuestion
