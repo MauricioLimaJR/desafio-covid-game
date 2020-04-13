@@ -35,7 +35,7 @@ const RulesSection = ({ start }) => {
       id="rules"
       container
       alignContent='flex-start'
-      justify='space-between'
+      justify='center'
     >
       <Grid item style={{ maxWidth: '600px' }}>
         <Grid item xs={12}>
