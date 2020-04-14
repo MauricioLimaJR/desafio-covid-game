@@ -13,6 +13,7 @@ import {
   getMatchMistakes,
   setMatchMistakes } from '../../lib/persistence'
 import gameSelector from '../../lib/gameSelector'
+import { shuffle } from '../../lib/utils'
 
 const BackgroundContainer = styled(Grid)`
   background: linear-gradient(
@@ -38,36 +39,37 @@ const GameData = styled(Grid)`
   }
 `
 
+const twoDigitsParser = time => time >= 10 ? `${time}` : `0${time}`
+
+const timeUp = (start, saveTime) => {
+  const currentMoment = new Date(Date.now() - start)
+  const minutes = twoDigitsParser(currentMoment.getMinutes())
+  const seconds = twoDigitsParser(currentMoment.getSeconds())
+
+  const timeToString = `${minutes}:${seconds}`
+  saveTime(timeToString)
+}
+
 const Gameboard = () => {
+  // Query Param
   const query = new URLSearchParams(useLocation().search)
   const { id } = query.get('id')
 
+  // Game Data
   const [startGameTime] = React.useState(getGameStart())
   const [playingTime, setPlayingTime] = React.useState('00:00')
-
   const [mistakes, setMistakes] = React.useState(getMatchMistakes())
 
-  const twoDigitsParser = time => time >= 10 ? `${time}` : `0${time}`
-
-  const timeUp = () => {
-    const currentMoment = new Date(Date.now() - startGameTime)
-    const minutes = twoDigitsParser(currentMoment.getMinutes())
-    const seconds = twoDigitsParser(currentMoment.getSeconds())
-
-    const timeToString = `${minutes}:${seconds}`
-    setPlayingTime(timeToString)
-  }
-
+  // Time up event handlers
   const [intervalID, setIntervalID] = React.useState(false)
-
-  const timeCounter = () => setInterval(() => timeUp(), 1000)
-
+  const timeCounter = () => setInterval(() => timeUp(startGameTime, setPlayingTime), 1000)
   React.useEffect(() => {
     setIntervalID(timeCounter())
   }, [1])
 
+  // Game Uuestions
   const game = gameSelector(id)
-  const questions = game.alternatives
+  const [questions] = React.useState(shuffle(game.alternatives))
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0)
   const [resumeGame, setResumeGame] = React.useState(false)
 
@@ -75,7 +77,6 @@ const Gameboard = () => {
     if ((currentQuestionIndex + 1) < questions.length) {
       return setCurrentQuestionIndex(v => v + 1)
     }
-
     // Game End
     clearInterval(intervalID)
     setResumeGame(true)
