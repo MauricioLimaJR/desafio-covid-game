@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { HashLink as Link } from 'react-router-hash-link'
 // Material-UI
 import { Grid } from '@material-ui/core'
 import { Update, Error } from '@material-ui/icons'
@@ -115,7 +116,9 @@ const GameResume = ({
         </Button>
       </Grid>
       <Grid items xs={12} style={{ marginTop: '10px' }}>
-        <Button onClick={onDev} color='secondary' size='large'>Ver Ranking</Button>
+        <Link to='/ranking'>
+          <Button color='secondary' size='large'>Ver Ranking</Button>
+        </Link>
       </Grid>
     </MainContainer>
   )

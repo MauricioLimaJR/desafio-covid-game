@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { HashLink as Link } from 'react-router-hash-link'
 // Material-UI
 import { Grid } from '@material-ui/core'
-import { Update, Error } from '@material-ui/icons'
 // Custom components
 import firebase from '../../firebase/firebase'
 import Button from '../components/Button'
@@ -63,6 +62,7 @@ const Ranking = () => {
 
   React.useEffect(() =>{
     (async () => {
+      Toast.show('Carregando o ranking 👾')
       const users = await getRanking()
       setRanking(users)
     })()
