@@ -9,6 +9,7 @@ import Gameboard from './pages/gameboard/index'
 import Games from './pages/games/index'
 import Header from './pages/components/Header'
 import Landing from './pages/landing/index'
+import RankingTable from './pages/ranking/index'
 import Theme from './core/theme'
 // Others
 import * as colors from './constants/colors'
@@ -33,6 +34,7 @@ function App() {
               <Route exact path='/' component={Landing} />
               <Route exact path='/jogos' component={Games} />
               <Route exact path='/jogar' component={Gameboard} />
+              <Route exact path='/ranking' component={RankingTable} />
               <Route path='/' component={Landing} />
             </Switch>
           </BodyContent>
