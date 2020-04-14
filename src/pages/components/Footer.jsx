@@ -1,14 +1,14 @@
 import React from 'react'
 // Material-UI
 import { Grid, Divider } from '@material-ui/core'
-import InstagramIcon from '@material-ui/icons/Instagram'
+import HelpOutlineIcon from '@material-ui/icons/HelpOutline'
 // Custom components
 import NavMenu from './NavMenu'
 
 const Footer = props => {
   const menuOptions = [
-    { title: 'Desafio Covid', readOnly: true },
-    { icon: InstagramIcon, external: 'https://www.instagram.com/' },
+    // { title: 'Sobre', icon: HelpOutlineIcon, internal: '/sobre' },
+    { title: 'Sobre', internal: '/sobre' },
   ]
 
   return (

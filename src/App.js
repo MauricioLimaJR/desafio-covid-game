@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { ThemeProvider } from '@material-ui/core/styles'
 // Custom Components
+import About from './pages/about/index'
 import BodyContent from './pages/components/BodyContent'
 import Footer from './pages/components/Footer'
 import Gameboard from './pages/gameboard/index'
@@ -32,9 +33,10 @@ function App() {
           <BodyContent className="App">
             <Switch>
               <Route exact path='/' component={Landing} />
-              <Route exact path='/jogos' component={Games} />
               <Route exact path='/jogar' component={Gameboard} />
+              <Route exact path='/jogos' component={Games} />
               <Route exact path='/ranking' component={RankingTable} />
+              <Route exact path='/sobre' component={About} />
               <Route path='/' component={Landing} />
             </Switch>
           </BodyContent>
