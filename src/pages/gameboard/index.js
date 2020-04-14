@@ -10,6 +10,7 @@ import GameResume from './components/GameResume'
 import * as colors from '../../constants/colors'
 import {
   getGameStart,
+  getPausedGameTime,
   getMatchMistakes,
   setMatchMistakes } from '../../lib/persistence'
 import gameSelector from '../../lib/gameSelector'
@@ -42,7 +43,9 @@ const GameData = styled(Grid)`
 const twoDigitsParser = time => time >= 10 ? `${time}` : `0${time}`
 
 const timeUp = (start, saveTime) => {
-  const currentMoment = new Date(Date.now() - start)
+  const gameTime = parseInt(start) + parseInt(getPausedGameTime())
+  const currentMoment = new Date(Date.now() - gameTime)
+
   const minutes = twoDigitsParser(currentMoment.getMinutes())
   const seconds = twoDigitsParser(currentMoment.getSeconds())
 

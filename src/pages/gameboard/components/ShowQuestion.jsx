@@ -8,6 +8,7 @@ import ExplanationModal from './ExplanationModal'
 import * as colors from '../../../constants/colors'
 import Toast from '../../../lib/toastfy'
 import { randomErrorMessages } from '../../../lib/utils'
+import { addPausedGameTime, getPausedGameTime } from '../../../lib/persistence'
 
 const AnwserBtn = ({ handleClick, selected, children, isFake, isTrue }) => {
   const LineButton = styled.div`
@@ -66,19 +67,29 @@ const ShowQuestion = ({
   handleMistake = () => {},
 }) => {
   const [isOpen, setIsOpen] = React.useState(false)
+  // Game Pause event
+  const [startPause, setStartPause] = React.useState(null)
 
   const { question: asking, alternatives, explanation, type = 'line' } = question
 
   const checkAnwser = (isAnwser) => {
-    if (isAnwser) return setIsOpen(true)
+    if (isAnwser) {
+      setIsOpen(true)
+      setStartPause(Date.now())
+      return true
+    }
 
     Toast.singleError(randomErrorMessages())
     handleMistake()
   }
 
   const correctResponse = () => {
+    const paused = getPausedGameTime()
+    addPausedGameTime(parseInt(paused) + (Date.now() - startPause))
+
     setIsOpen(false)
     handleCorrectResponse()
+
   }
 
   return (
