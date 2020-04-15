@@ -13,7 +13,7 @@ import {
   getPausedGameTime,
   getMatchMistakes,
   setMatchMistakes } from '../../lib/persistence'
-import gameSelector from '../../lib/gameSelector'
+import { getGame, shuffleAlternatives} from '../../lib/gameSelector'
 import { shuffle } from '../../lib/utils'
 
 const BackgroundContainer = styled(Grid)`
@@ -71,8 +71,14 @@ const Gameboard = () => {
   }, [1])
 
   // Game Uuestions
-  const game = gameSelector(id)
-  const [questions] = React.useState(shuffle(game.alternatives))
+  const game = getGame(id)
+  // const [questions] = React.useState(shuffle(game.questions)
+
+  const [questions, setQuestionsShuffled] = React.useState(shuffle(game.questions))
+
+  React.useEffect(() => {
+    setQuestionsShuffled(shuffleAlternatives(questions))
+  }, [id])
   const [currentQuestionIndex, setCurrentQuestionIndex] = React.useState(0)
   const [resumeGame, setResumeGame] = React.useState(false)
 

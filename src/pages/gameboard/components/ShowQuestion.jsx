@@ -70,7 +70,7 @@ const ShowQuestion = ({
   // Game Pause event
   const [startPause, setStartPause] = React.useState(null)
 
-  const { question: asking, alternatives, explanation, type = 'line' } = question
+  const { question: asking, alternatives, explanation, type } = question
 
   const checkAnwser = (isAnwser) => {
     if (isAnwser) {
@@ -109,7 +109,7 @@ const ShowQuestion = ({
 
       {/* Alternatives */}
       {
-        type === 'line'
+        type === 'select'
           ? (
             alternatives.map((alt, k) => (
               <Grid item xs={12}>

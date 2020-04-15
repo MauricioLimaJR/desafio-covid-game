@@ -1,9 +1,10 @@
   export default {
     id: '01',
     title: 'Quiz Inicial',
-    alternatives: [
+    questions: [
       {
         question: 'Quais dessas opções é a mais eficaz para impedir a disseminação do Coronavírus no Brasil?',
+        type: 'select',
         alternatives: [
           { text: 'Tomando chás e vitamina C'},
           { text: 'Isolamento vertical'},
@@ -15,6 +16,7 @@
 
       {
         question: 'Qual medicamento se mostrou eficaz e oferece a cura para o COVID-19?',
+        type: 'select',
         alternatives: [
           { text: 'Hidroxicloroquina'},
           { text: 'Dipirona'},
@@ -33,6 +35,7 @@
 
       {
         question: 'Qual opção mais eficaz para higienizar as mãos e evitar contágio?',
+        type: 'select',
         alternatives: [
           { text: 'Álcool gel 70%'},
           { text: 'Água e sabão', isAnwser: true },
@@ -51,6 +54,7 @@
 
       {
         question: 'Qual o nome científico do novo Coronavírus',
+        type: 'select',
         alternatives: [
           { text: 'Vírus Chines'},
           { text: 'Covid-19'},
@@ -62,6 +66,7 @@
 
       {
         question: 'Qual desses grupos corre mais risco na luta contra o Coronavírus?',
+        type: 'select',
         alternatives: [
           { text: 'Idosos (+60 anos)', isAnwser: true },
           { text: 'Adultos'},
