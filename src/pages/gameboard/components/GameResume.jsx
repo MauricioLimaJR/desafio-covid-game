@@ -11,6 +11,7 @@ import PlayerFormModal from '../../components/modals/PlayerFormModal'
 import Toast from '../../../lib/toastfy'
 // Others
 import * as colors from '../../../constants/colors'
+import { SaveMatch } from '../../../collections/operations'
 import Award from '../../../static/images/award.svg'
 import { getShareUrl, getGameScore } from '../../../lib/utils'
 
@@ -61,12 +62,12 @@ const GameResume = ({
     try {
       setUsername(user.name)
       setIsOpen(false)
-      Toast.show('Salvando dados da partida...')
+      Toast.show('Salvando dados da partida 🔐')
 
-
-      await db.collection('users').add({ score, time, mistakes, ...user })
+      const match = { time, mistakes, score}
+      await SaveMatch(user, match)
     } catch (err) {
-      Toast.error('Algum erro aconteceu aqui..')
+      Toast.error('Aconteceu algum erro 😕')
     }
   }
 
