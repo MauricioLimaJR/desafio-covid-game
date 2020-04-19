@@ -3,9 +3,7 @@ import styled from 'styled-components'
 import { HashLink as Link } from 'react-router-hash-link'
 // Material-UI
 import { Grid } from '@material-ui/core'
-import { Update, Error } from '@material-ui/icons'
 // Custom components
-import firebase from '../../../firebase/firebase'
 import Button from '../../components/Button'
 import PlayerFormModal from '../../components/modals/PlayerFormModal'
 import Toast from '../../../lib/toastfy'
@@ -51,9 +49,6 @@ const GameResume = ({
   mistakes,
   questionsAmount,
 }) => {
-  const db = firebase.firestore()
-  const onDev = () => Toast.show('Recurso em densenvolvimento')
-
   const score = getGameScore(time, mistakes, questionsAmount)
   const [username, setUsername] = React.useState(null)
 

@@ -57,8 +57,8 @@ const RankingTable = ({
           const { name, instagram, time, mistakes, score } = user
 
           return <Grid
+            key={score}
             container
-            xs={12}
           >
             <Item item xs={1}>
               <p className='name'>{k+1}</p>

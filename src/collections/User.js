@@ -17,6 +17,11 @@ class User {
     return userId
   }
 
+  async getUser(id) {
+    const user = await this.collection.doc(id)
+    return user
+  }
+
 }
 
 export default new User()

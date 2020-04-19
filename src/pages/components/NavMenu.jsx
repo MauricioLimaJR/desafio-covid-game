@@ -58,6 +58,7 @@ const NavMenu = ({
     <Styled.Wrapper container justify='center' data-color={bgColor}>
       {options.map(option => (
         <Styled.Option
+        key={option.title}
           item
           xs='auto'
           data-color={textColor}
