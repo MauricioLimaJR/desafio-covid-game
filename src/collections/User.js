@@ -13,6 +13,7 @@ class User {
     /**
      * User data: id(default), instagram, hash, shares
      */
+
     const { id: userId } = await this.collection.add({ teste: true, ...user})
     return userId
   }
@@ -20,6 +21,24 @@ class User {
   async getUser(id) {
     const user = await this.collection.doc(id)
     return user
+  }
+
+  async getUserByInstagram(instagram) {
+    const users = []
+    await this.collection
+      .where('instagram', '==', instagram)
+      .get()
+      .then(response => {
+        if(!response) return false
+
+        response.forEach(user => {
+          users.push({ userId: user.id, ...user.data() })
+        })
+      })
+
+    await Promise.all(users)
+    if (!users[0].id) return false
+    return users[0]
   }
 
 }

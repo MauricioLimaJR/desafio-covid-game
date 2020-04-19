@@ -6,6 +6,7 @@ import { Grid } from '@material-ui/core'
 // Custom Settings
 import ResumeSection from './componens/ResumeSection'
 import RulesSection from './componens/RulesSection'
+import GameStartModal from '../components/modals/GameStartModal'
 // Others
 import { setGameStart, setMatchMistakes } from '../../lib/persistence'
 import skyBackground from '../../static/images/background.png'
@@ -21,18 +22,21 @@ const BackgroundContainer = styled(Grid)`
 `
 
 const Landing = () => {
+  const [open, setOpen] = React.useState(false)
   const history = useHistory()
 
-  const startGame = gameId => {
-    history.push(`/jogar?id=${gameId}`)
+  const handleGameStart = () => {
+    setOpen(false)
     setGameStart(Date.now())
     setMatchMistakes(0)
+    history.push(`/jogar?id=01`)
   }
 
   return (
     <BackgroundContainer container>
-      <ResumeSection start={startGame} />
-      <RulesSection start={startGame} />
+      <GameStartModal open={open} handleGameStart={handleGameStart} />
+      <ResumeSection start={() => setOpen(true)} />
+      <RulesSection start={() => setOpen(true)} />
     </BackgroundContainer>
   )
 }
