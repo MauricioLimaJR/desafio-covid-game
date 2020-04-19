@@ -40,10 +40,9 @@ const Title = styled(Explanation)`
   font-weight: bold;
 `
 
-const Time = styled.p`
-  color: ${colors.lividBrown};
-  font-size: 0.8rem;
-  margin: 0;
+const Time = styled(Explanation)`
+  font-size: 1rem;
+  font-weight: bold;
 `
 
 const ExplanationModal = ({
@@ -65,7 +64,7 @@ const ExplanationModal = ({
             {/* Title */}
             <Grid item xs={12}>
               <Title>{'Correto!'}</Title>
-              <Time>O tempo de leitura será descontado 👍</Time>
+              <Time>Tempo pausado ⏰</Time>
             </Grid>
 
             {/* Explanation text */}

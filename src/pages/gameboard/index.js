@@ -64,6 +64,7 @@ const Gameboard = () => {
   const [mistakes, setMistakes] = React.useState(getMatchMistakes())
 
   // Time up event handlers
+  const [timeSnapshot, setTimeSnapshot] = React.useState(null)
   const [intervalID, setIntervalID] = React.useState(false)
   const timeCounter = () => setInterval(() => timeUp(startGameTime, setPlayingTime), 1000)
   React.useEffect(() => {
@@ -104,7 +105,7 @@ const Gameboard = () => {
             <Grid item xs={12} style={{ backgroundColor: 'white', height: 'min-content' }}>
               <GameData container>
                 <Grid item xs={2}>
-                  {playingTime}
+                  {timeSnapshot ? 'pausado' : playingTime}
                 </Grid>
                 <Grid item xs={3}>
                   {`Erros: ${mistakes}`}
@@ -135,6 +136,7 @@ const Gameboard = () => {
                   setMatchMistakes(v + 1)
                   return v + 1
                 })}
+                handleModalPause={isPaused => setTimeSnapshot(isPaused)}
               />
           }
         </Grid>

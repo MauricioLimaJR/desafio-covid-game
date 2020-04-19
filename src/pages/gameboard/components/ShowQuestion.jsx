@@ -65,6 +65,7 @@ const ShowQuestion = ({
   question,
   handleCorrectResponse = () => {},
   handleMistake = () => {},
+  handleModalPause= () => {},
 }) => {
   const [isOpen, setIsOpen] = React.useState(false)
   // Game Pause event
@@ -74,6 +75,7 @@ const ShowQuestion = ({
 
   const checkAnwser = (isAnwser) => {
     if (isAnwser) {
+      handleModalPause(true)
       setIsOpen(true)
       setStartPause(Date.now())
       return true
@@ -88,8 +90,8 @@ const ShowQuestion = ({
     addPausedGameTime(parseInt(paused) + (Date.now() - startPause))
 
     setIsOpen(false)
+    handleModalPause(false)
     handleCorrectResponse()
-
   }
 
   return (
