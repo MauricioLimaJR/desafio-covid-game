@@ -4,6 +4,7 @@ import { HashLink as Link } from 'react-router-hash-link'
 // Material-UI
 import { Grid } from '@material-ui/core'
 import WhatsappIcon from '@material-ui/icons/WhatsApp'
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
 // Custom components
 import Button from'../components/Button'
 import Icon from'../components/Icon'
@@ -88,6 +89,14 @@ const Ranking = () => {
               />
             </a>
           </Grid>
+          <Grid item xs='auto'>
+            <a href='https://www.linkedin.com/in/mauricio-lima-junior/' target='./'>
+              <Icon
+                color='secondary'
+                MIcon={LinkedInIcon}
+              />
+            </a>
+          </Grid>
         </Grid>
       </Grid>
 
@@ -103,6 +112,14 @@ const Ranking = () => {
               <Icon
                 color='secondary'
                 MIcon={WhatsappIcon}
+              />
+            </a>
+          </Grid>
+          <Grid item xs='auto'>
+            <a href='https://www.linkedin.com/in/davipradines/' target='./'>
+              <Icon
+                color='secondary'
+                MIcon={LinkedInIcon}
               />
             </a>
           </Grid>
