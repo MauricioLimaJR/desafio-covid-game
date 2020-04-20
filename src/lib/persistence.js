@@ -42,3 +42,10 @@ export const getMatchMistakes = () => {
 // Game extra points
 export const endExtraPoints = () => cookie.set('extra', false)
 export const getCanHaveExtra = () => cookie.get('extra')
+export const handleChallenge = (challenger, callback) => {
+  if (cookie.get('challenger') && cookie.get('challenger') === challenger) {
+    return false
+  }
+  cookie.set('challenger', challenger)
+  callback(challenger)
+}

@@ -43,6 +43,7 @@ const Score = styled(SubTitle)`
   color: ${colors.razzmatazzDarkPink};
   font-size: 1.3rem;
   font-weight: bold;
+  margin: 5px 10px 10px;
 `
 
 const GameData = styled(Grid)`
@@ -123,7 +124,7 @@ const GameResume = ({
       {/* Actions */}
       <Grid items xs={12}>
         <SubTitle>
-          Compartilhe no Whatsapp e ganhe mais pontos!
+          <b>Compartilhe no Whatsapp e ganhe mais pontos!</b> Cada clique no seu link enviado também serão convertidos em pontos 🎉
         </SubTitle>
         <Button
           color='alt'

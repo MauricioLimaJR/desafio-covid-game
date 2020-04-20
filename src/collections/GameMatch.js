@@ -61,6 +61,17 @@ class GameMatch {
     const match = await this.collection.doc(ref).get()
     this.collection.doc(ref).update({ score: match.data().score + points })
   }
+
+  async plusChallengePoints(instagram, points) {
+    await this.collection
+      .where('instagram', '==', instagram)
+      .get()
+      .then(matches => matches.forEach(match => {
+        this.collection
+          .doc(match.id)
+          .update({ score: match.data().score + points })
+      }))
+  }
 }
 
 export default new GameMatch()

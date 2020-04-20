@@ -46,13 +46,25 @@ export const GetRanking = async (timing) => {
 
 
 /**
- * Plus extra points to score
+ * Plus an extra points to a saved score
  *
+ * @param {String} match - match ref
  */
 export const plusExtraPoints = (match) => {
   try {
     GameMatch.plusPoints(match, 150)
   } catch (err) {
     throw err
+  }
+}
+
+/**
+ * Add points to a saved match by challenge link click
+ */
+export const addChallengePoints = (instagram) => {
+  try {
+    console.log(instagram)
+    GameMatch.plusChallengePoints(instagram, 25)
+  } catch (err) {
   }
 }
