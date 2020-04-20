@@ -17,6 +17,7 @@ const MainContainer = styled(Grid)`
   height: 100%;
   padding: 15px 10px;
   text-align: center;
+  overflow-y: auto;
 
   h3 {
     margin: 5px 0;
@@ -119,7 +120,6 @@ const Ranking = () => {
           {/* Ranking interval */}
           <Grid item xs={8}>
             <CustomSlider
-              markLabel={{ color: 'white', fontSize: '2rem' }}
               color='secondary'
               defaultValue={interval}
               valueLabelFormat={v => getIntervalLabel(v)}
@@ -133,7 +133,7 @@ const Ranking = () => {
 
           {/* Icon */}
           <Grid item xs={12}>
-            <img height={80} src={Podium} alt='Pódio'/>
+            <img height={60} src={Podium} alt='Pódio'/>
           </Grid>
 
           {/* Title */}

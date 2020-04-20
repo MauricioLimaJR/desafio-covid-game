@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Grid } from '@material-ui/core'
 // Others
 import * as colors from '../../../constants/colors'
+import { getLimitedString } from '../../../lib/utils'
 
 const MainContainer = styled(Grid)`
   height: 100%;
@@ -18,7 +19,7 @@ const MainContainer = styled(Grid)`
   }
 
   .name {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
   .instagram {
     font-size: 0.6rem;
@@ -63,8 +64,8 @@ const RankingTable = ({
             <Item item xs={1}>
               <p className='name'>{k+1}</p>
             </Item>
-            <Item item xs={4}>
-              <p className='name'>{name}</p>
+            <Item item xs={5}>
+              <p className='name'>{getLimitedString(name)}</p>
               <p className='instagram'>{instagram}</p>
             </Item>
             <Item item xs={2}>
@@ -74,7 +75,7 @@ const RankingTable = ({
               <p className='mistake'>{mistakes}</p>
               <p className='instagram'>erros</p>
             </Item>
-            <Item item xs={3}>
+            <Item item xs={2}>
               <p className='score'>{score}</p>
             </Item>
           </Grid>

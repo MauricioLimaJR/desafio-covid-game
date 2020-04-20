@@ -68,3 +68,12 @@ export const getGameScore = (time, mistakes, questionsAmount) =>  {
   return score < LOWER_SCORE ? LOWER_SCORE : parseInt(score)
 }
 
+/**
+ * Returns a string limited to 15 chars amount
+ *
+ * @param {String} str
+ */
+export const getLimitedString = str => {
+  if (!str) return false
+  return str.length > 16 ? str.slice(0, 17) : str
+}

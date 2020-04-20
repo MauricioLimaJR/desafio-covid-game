@@ -45,6 +45,12 @@ const Score = styled(SubTitle)`
   font-weight: bold;
 `
 
+const GameData = styled(Grid)`
+  border: solid 1px ${colors.razzmatazzPink};
+  margin: 5px 0 !important;
+  padding: 5px 0 3px !important;
+`
+
 const GameResume = ({
   time,
   mistakes,
@@ -99,14 +105,14 @@ const GameResume = ({
       </Grid>
 
       {/* Game Data */}
-      <Grid item xs={12}>
+      <GameData item xs={8}>
         <b>Tempo de jogo</b>
         <h3>{time}</h3>
-      </Grid>
-      <Grid item xs={12}>
+      </GameData>
+      <GameData item xs={8}>
         <b>Erros cometidos:</b>
         <h3>{mistakes}</h3>
-      </Grid>
+      </GameData>
 
       <Grid item xs={12}>
         <SubTitle>
