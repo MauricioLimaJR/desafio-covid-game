@@ -7,6 +7,8 @@ export const setGameStart = date => {
 
   cookie.remove('start')
   cookie.set('start', date)
+
+  cookie.set('extra', true)
   // window.localStorage.removeItem('start')
   // window.localStorage.setItem('start', date)
 }
@@ -36,3 +38,7 @@ export const getMatchMistakes = () => {
   return parseInt(cookie.get('mistakes'))
   // return parseInt(window.localStorage.getItem('mistakes'))
 }
+
+// Game extra points
+export const endExtraPoints = () => cookie.set('extra', false)
+export const getCanHaveExtra = () => cookie.get('extra')

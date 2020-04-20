@@ -56,6 +56,11 @@ class GameMatch {
     ranking.sort((a, b) => b.score - a.score)
     return ranking.slice(0, 11)
   }
+
+  async plusPoints(ref, points) {
+    const match = await this.collection.doc(ref).get()
+    this.collection.doc(ref).update({ score: match.data().score + points })
+  }
 }
 
 export default new GameMatch()

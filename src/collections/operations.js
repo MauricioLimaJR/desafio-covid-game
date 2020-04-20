@@ -8,9 +8,10 @@ export const SaveMatch = async (user, match) => {
     const userId = exists || await User.create(user)
     if (!userId) throw new Error('Failed creating new user')
 
-    await GameMatch.create(
+    const matchId = await GameMatch.create(
       { gameId: 'basico', userId, ...user, ...match }
     )
+    return matchId
   } catch (err) {
     throw err
   }
@@ -38,6 +39,19 @@ export const GetRanking = async (timing) => {
 
   try {
     if (timing) return await GameMatch.getRankingByInterval(interval)
+  } catch (err) {
+    throw err
+  }
+}
+
+
+/**
+ * Plus extra points to score
+ *
+ */
+export const plusExtraPoints = (match) => {
+  try {
+    GameMatch.plusPoints(match, 150)
   } catch (err) {
     throw err
   }

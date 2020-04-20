@@ -9,9 +9,10 @@ import PlayerFormModal from '../../components/modals/PlayerFormModal'
 import Toast from '../../../lib/toastfy'
 // Others
 import * as colors from '../../../constants/colors'
-import { SaveMatch } from '../../../collections/operations'
+import { SaveMatch, plusExtraPoints } from '../../../collections/operations'
 import Award from '../../../static/images/award.svg'
 import { getShareUrl, getGameScore } from '../../../lib/utils'
+import { endExtraPoints, getCanHaveExtra } from '../../../lib/persistence'
 
 const MainContainer = styled(Grid)`
   height: 100%;
@@ -49,20 +50,32 @@ const GameResume = ({
   mistakes,
   questionsAmount,
 }) => {
-  const score = getGameScore(time, mistakes, questionsAmount)
+  const [score, setScore] = React.useState(getGameScore(time, mistakes, questionsAmount))
   const [username, setUsername] = React.useState(null)
+  const [instagram, setInstagram] = React.useState(null)
+  const [matchId, setMatchId] = React.useState(null)
 
   const [isOpen, setIsOpen] = React.useState(true)
   const handleCloseModal = async user => {
     try {
       setUsername(user.name)
+      if (user.instagram) setInstagram(user.instagram)
       setIsOpen(false)
       Toast.show('Salvando dados da partida 🔐')
 
       const match = { time, mistakes, score}
-      await SaveMatch(user, match)
+      const savedMatchId = await SaveMatch(user, match)
+      setMatchId(savedMatchId)
     } catch (err) {
       Toast.error('Aconteceu algum erro 😕')
+    }
+  }
+
+  const sumExtra = () => {
+    if (getCanHaveExtra()) {
+      endExtraPoints()
+      plusExtraPoints(matchId)
+      setScore(v => v + 150)
     }
   }
 
@@ -103,12 +116,16 @@ const GameResume = ({
 
       {/* Actions */}
       <Grid items xs={12}>
+        <SubTitle>
+          Compartilhe no Whatsapp e ganhe mais pontos!
+        </SubTitle>
         <Button
           color='alt'
           size='large'
-          external={getShareUrl(score)}
+          external={getShareUrl(score, instagram)}
+          onClick={() => sumExtra()}
         >
-          Compartilhar no Whatsapp
+          Compartilhar e ganhar + 150 pontos 🎁
         </Button>
       </Grid>
       <Grid items xs={12} style={{ marginTop: '10px' }}>
