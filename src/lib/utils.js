@@ -24,7 +24,6 @@ export const randomErrorMessages = () => {
 }
 
 export const getSecondsFromString = str => {
-  console.log(str)
   const [minutes, seconds] = str.split(':')
   let totalSeconds = parseInt(seconds)
   if (minutes > 0) {

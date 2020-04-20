@@ -63,7 +63,6 @@ export const plusExtraPoints = (match) => {
  */
 export const addChallengePoints = (instagram) => {
   try {
-    console.log(instagram)
     GameMatch.plusChallengePoints(instagram, 25)
   } catch (err) {
   }

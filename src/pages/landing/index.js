@@ -27,7 +27,6 @@ const Landing = () => {
   // Query Param
   const query = new URLSearchParams(useLocation().search)
   const challenger = query.get('desafiante')
-  console.log(challenger)
   if (challenger) handleChallenge(challenger, addChallengePoints)
 
 
