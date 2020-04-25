@@ -28,7 +28,7 @@ const ResumeSection = ({ start }) => {
 
       <Grid item xs={12}>
         <Description>
-          <p>O jogo que ajuda você a combater o Novo Coronavírus e qualquer fakenews.</p>
+          <p>O jogo que ajuda você a combater o Novo Coronavírus e qualquer Fake News.</p>
           <b>É hora de disseminar bons hábitos.</b>
         </Description>
       </Grid>

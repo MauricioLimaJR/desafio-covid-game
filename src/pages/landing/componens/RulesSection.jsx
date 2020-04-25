@@ -74,7 +74,7 @@ const RulesSection = ({ start }) => {
           >
             <Grid item xs>
               <Description>
-                As melhores pontuações, ganharão um <b>destaque</b> no nosso Painel dos Campeões e serão lembradas como as <b>melhores combatentes de fakenews do COVID-19 do Brasil.</b>
+                As melhores pontuações, ganharão um <b>destaque</b> no nosso Painel dos Campeões e serão lembradas como as <b>melhores combatentes de Fake News do COVID-19 do Brasil.</b>
               </Description>
             </Grid>
             <Grid item xs={4} style={{ textAlign: 'right' }}>

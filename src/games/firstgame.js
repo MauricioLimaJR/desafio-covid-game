@@ -3,13 +3,13 @@
     title: 'Quiz Inicial',
     questions: [
       {
-        question: 'Quais dessas opções é a mais eficaz para impedir a disseminação do Coronavírus no Brasil?',
+        question: 'Qual dessas opções apresenta mais eficácia para impedir a disseminação do novo coronavírus no Brasil?',
         type: 'select',
         alternatives: [
-          { text: 'Tomando chás e vitamina C'},
-          { text: 'Isolamento vertical'},
-          { text: 'Isolamento social', isAnwser: true },
-          { text: 'Usando luvas e máscaras'},
+          { text: 'Uso de chás e vitamina C'},
+          { text: 'Isolamento Vertical'},
+          { text: 'Isolamento Social', isAnwser: true },
+          { text: 'Uso de luvas e máscaras'},
         ],
         explanation: 'De acordo com a OMS, o isolamento social é a melhor forma de diminuir possíveis fatalidades e retornar o mais rápido possível a nossa vida normal.',
       },
@@ -46,17 +46,17 @@
       },
 
       {
-        question: 'Fake ou News: O novo Coronavírus não consegue sobreviver a "temperaturas entre 26º e 27º.',
+        question: 'Fake ou News: O novo Coronavírus não consegue sobreviver a temperaturas entre 26º e 27º.',
         type: 'boolean',
         alternatives: { isFake: true },
-        explanation: 'O Novo Coronavírus consegue facilmente suportar temperaturas superiores à 27º. A diretora do IMT-USP Ester Sabino, afirma: "A temperatura do corpo humano é 36ºC". Portanto, esta afirmativa é falsa.',
+        explanation: 'O Novo Coronavírus consegue facilmente suportar temperaturas superiores a 27º. A diretora do IMT-USP, Ester Sabino, afirma que: "A temperatura do corpo humano é 36ºC". Portanto, esta afirmativa é falsa.',
       },
 
       {
-        question: 'Qual o nome científico do novo Coronavírus',
+        question: 'Qual é o nome científico do novo coronavírus',
         type: 'select',
         alternatives: [
-          { text: 'Vírus Chines'},
+          { text: 'Vírus Chinês'},
           { text: 'Covid-19'},
           { text: 'H1N1'},
           { text: 'Sars-Cov-2', isAnwser: true },
@@ -65,7 +65,7 @@
       },
 
       {
-        question: 'Qual desses grupos corre mais risco na luta contra o Coronavírus?',
+        question: 'Qual é o grupo mais vunerável ao novo coronavírus?',
         type: 'select',
         alternatives: [
           { text: 'Idosos (+60 anos)', isAnwser: true },
@@ -73,11 +73,11 @@
           { text: 'Crianças '},
           { text: 'Animais'},
         ],
-        explanation: 'O vírus é mais letal para idosos e pessoas com doenças crônicas. Boa parte das crianças, jovens e adultos podem contrair o vírus assintomaticamente, ou seja, não apresentarão nenhum sintoma. E sobre o seu pet, fique tranquilo. Estudos mostram que ele vai ficar bem seguro durante a pandemia.',
+        explanation: 'O vírus é mais letal para idosos e pessoas com doenças crônicas. Boa parte das crianças, jovens e adultos pode contrair o vírus assintomaticamente, ou seja, não apresentarão nenhum sintoma.',
       },
 
       {
-        question: 'Fake ou News: A maioria das pessoas fora do grupo de risco não sentem sintomas fortes. Por isso, podem e devem transitar livremente, enquanto os mais vulneráveis ficam em quarentena.',
+        question: 'Fake ou News: A maioria das pessoas fora do grupo de risco não sente sintomas fortes. Por isso, podem e devem transitar livremente, enquanto os mais vulneráveis ficam em quarentena.',
         type: 'boolean',
         alternatives: { isFake: true },
         explanation: 'Todos devem ficar em casa para garantir que o Coronavírus cause o menor número de vítimas possível. Uma criança, por exemplo, mesmo sem apresentar nenhum sintoma, pode carregar o vírus no seu organismo e infectar dezenas de pessoas, ajudando a sobrecarregar o sistema de saúde, impedindo que outros tenham acesso ao tratamento adequado.',
