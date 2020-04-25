@@ -74,6 +74,7 @@ const GameResume = ({
       const savedMatchId = await SaveMatch(user, match)
       setMatchId(savedMatchId)
     } catch (err) {
+      // console.error(err)
       Toast.error('Aconteceu algum erro 😕')
     }
   }

@@ -37,7 +37,7 @@ class User {
       })
 
     await Promise.all(users)
-    if (!users[0].id) return false
+    if (!users[0]) return false
     return users[0]
   }
 
