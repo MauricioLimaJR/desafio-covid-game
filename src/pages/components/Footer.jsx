@@ -7,8 +7,8 @@ import NavMenu from './NavMenu'
 
 const Footer = props => {
   const menuOptions = [
-    // { title: 'Sobre', icon: HelpOutlineIcon, internal: '/sobre' },
-    { title: 'Sobre', internal: '/sobre' },
+    { title: 'Sobre o jogo /', internal: '/sobre' },
+    { title: 'Ver o Ranking', internal: '/ranking' },
   ]
 
   return (

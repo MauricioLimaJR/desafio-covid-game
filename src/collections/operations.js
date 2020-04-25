@@ -15,7 +15,6 @@ export const SaveMatch = async (user, match) => {
   } catch (err) {
     throw err
   }
-
 }
 
 /**

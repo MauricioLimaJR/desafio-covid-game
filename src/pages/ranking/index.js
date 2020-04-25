@@ -148,7 +148,7 @@ const Ranking = () => {
 
           {/* Button */}
           <Grid item xs={12}>
-            <Link to="/">
+            <Link to="/jogos">
               <Button
                 color='secondary'
                 size='large'
