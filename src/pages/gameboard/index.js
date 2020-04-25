@@ -125,6 +125,7 @@ const Gameboard = () => {
           {
             resumeGame
               ? <GameResume
+                  gameId={id}
                   time={playingTime}
                   mistakes={mistakes}
                   questionsAmount={questions.length}

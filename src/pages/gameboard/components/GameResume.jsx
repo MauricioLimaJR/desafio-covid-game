@@ -53,6 +53,7 @@ const GameData = styled(Grid)`
 `
 
 const GameResume = ({
+  gameId,
   time,
   mistakes,
   questionsAmount,
@@ -70,7 +71,7 @@ const GameResume = ({
       setIsOpen(false)
       Toast.show('Salvando dados da partida 🔐')
 
-      const match = { time, mistakes, score}
+      const match = { gameId, time, mistakes, score}
       const savedMatchId = await SaveMatch(user, match)
       setMatchId(savedMatchId)
     } catch (err) {

@@ -9,7 +9,7 @@ export const SaveMatch = async (user, match) => {
     if (!userId) throw new Error('Failed creating new user')
 
     const matchId = await GameMatch.create(
-      { gameId: 'basico', userId, ...user, ...match }
+      { userId, ...user, ...match }
     )
     return matchId
   } catch (err) {
