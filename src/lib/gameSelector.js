@@ -1,4 +1,5 @@
 import firstgame from '../games/firstgame'
+import secondGame from '../games/secondGame'
 import { shuffle } from './utils'
 
 export const shuffleAlternatives = questions => {
@@ -15,6 +16,7 @@ export const shuffleAlternatives = questions => {
 export const getGame = id => {
   switch (id) {
     case '01': return firstgame
+    case '02': return secondGame
     default: return firstgame
   }
 }

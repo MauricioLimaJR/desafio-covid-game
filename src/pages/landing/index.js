@@ -7,9 +7,8 @@ import { Grid } from '@material-ui/core'
 // Custom Settings
 import ResumeSection from './componens/ResumeSection'
 import RulesSection from './componens/RulesSection'
-import GameStartModal from '../components/modals/GameStartModal'
 // Others
-import { setGameStart, setMatchMistakes, handleChallenge } from '../../lib/persistence'
+import { handleChallenge } from '../../lib/persistence'
 import skyBackground from '../../static/images/background.png'
 import { addChallengePoints } from '../../collections/operations'
 
@@ -29,22 +28,16 @@ const Landing = () => {
   const challenger = query.get('desafiante')
   if (challenger) handleChallenge(challenger, addChallengePoints)
 
-
-  const [open, setOpen] = React.useState(false)
   const history = useHistory()
 
   const handleGameStart = () => {
-    setOpen(false)
-    setGameStart(Date.now())
-    setMatchMistakes(0)
-    history.push(`/jogar?id=01`)
+    history.push('/jogos')
   }
 
   return (
     <BackgroundContainer container>
-      <GameStartModal open={open} handleGameStart={handleGameStart} />
-      <ResumeSection start={() => setOpen(true)} />
-      <RulesSection start={() => setOpen(true)} />
+      <ResumeSection start={handleGameStart} />
+      <RulesSection start={handleGameStart} />
     </BackgroundContainer>
   )
 }

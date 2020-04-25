@@ -56,7 +56,7 @@ const timeUp = (start, saveTime) => {
 const Gameboard = () => {
   // Query Param
   const query = new URLSearchParams(useLocation().search)
-  const { id } = query.get('id')
+  const id = query.get('id')
 
   // Game Data
   const [startGameTime] = React.useState(getGameStart())

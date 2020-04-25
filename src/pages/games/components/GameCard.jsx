@@ -18,19 +18,26 @@ const SquaredContainer = styled(Grid)`
   width: 100px;
 `
 
+const Label = styled.p`
+  color: ${colors.galleryGray};
+  margin: 0;
+`
+
 const Title = styled.p`
   color: ${colors.galleryGray};
+  font-weight: bold;
 `
 
 const TextIcon = styled.p`
   color: ${colors.white};
   font-weight: bold;
   font-size: 3rem;
-  margin: 5px 0;
+  margin: 3px 0;
 `
 
 const GameCard = ({
   title,
+  label,
   icon,
   textIcon,
   // handlers
@@ -44,12 +51,19 @@ const GameCard = ({
         container
         alignContent={'center'}
         justify={'center'}
-        onClick={() => setOpen(true)}
+        // onClick={() => setOpen(true)}
+        onClick={onGameBegin}
       >
         {/* title */}
         <Grid item xs={12} style={{ height: '2rem'}}>
           <Title>{title}</Title>
         </Grid>
+
+        {label ? (
+          <Grid item xs={12}>
+            <Label>{label}</Label>
+          </Grid>
+        ) : null}
 
         {
           textIcon
