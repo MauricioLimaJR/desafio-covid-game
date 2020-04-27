@@ -42,7 +42,7 @@ const Games = () => {
   const games = [
     { id: '01', title: 'Quiz Inicial' },
     { id: '02', title: 'Quiz Ciência' },
-    { id: '03', title: 'Quiz Geral', label: 'Em breve (25/04)', disabled: true },
+    { id: '03', title: 'Quiz Geral', label: 'Em breve', disabled: true },
   ]
 
   return (
